@@ -93,3 +93,22 @@ node scripts/render.mjs --page filerapi/index.html --audio out/filerapi-music.wa
 python3 mulai/music.py
 node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --out out/mulai.mp4 --crf 18
 ```
+
+---
+
+# Video Edukasi — “5 Kesalahan Saat Membuat Presentasi” (9:16, ±40s)
+
+**Hasil:** [`dist/presentasi-5-kesalahan-40s-9x16.mp4`](dist/presentasi-5-kesalahan-40s-9x16.mp4) — 1080×1920, 60 fps, tanpa voice-over. Proyek terpisah di `presentasi/` (panggung graphite, satu slide yang diperbaiki bertahap, font Bricolage Grotesque + Inter, groove 120 BPM — 1 bar = 2 detik). Logo dipakai apa adanya sebagai watermark kecil di pojok kanan atas.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Hook: “Presentasimu bikin ngantuk?” — slide meredup, Zzz → “Mungkin ini penyebabnya.” |
+| 4–8s | Slide buruk (teks padat, font kecil, warna-warni, clip-art bergerak) + 5 pin merah: “5 kesalahan” |
+| 8–28s | Tiap kesalahan 2 bar: bar 1 = SEBELUM (area ditandai X merah), bar 2 = SESUDAH (slide berubah, centang hijau): teks → poin, font diperbesar, warna 2–3, animasi dihapus, hierarchy jelas |
+| 28–34s | Slide final “Clean. Jelas. Mudah dibaca.” + slider sebelum/sesudah |
+| 34–40s | “Presentasi bukan tempat memasukkan semuanya.” — tumpukan elemen berjatuhan → “Pilih yang penting.” |
+
+```bash
+python3 presentasi/music.py
+node scripts/render.mjs --page presentasi/index.html --audio out/presentasi-music.wav --out out/presentasi.mp4 --crf 18
+```
