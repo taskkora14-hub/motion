@@ -112,3 +112,24 @@ node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --ou
 python3 presentasi/music.py
 node scripts/render.mjs --page presentasi/index.html --audio out/presentasi-music.wav --out out/presentasi.mp4 --crf 18
 ```
+
+---
+
+# Video Edukasi — “Memahami Time Value of Money (TVM)” (9:16, ±60s)
+
+**Hasil:** [`dist/tvm-time-value-of-money-60s-9x16.mp4`](dist/tvm-time-value-of-money-60s-9x16.mp4) — 1080×1920, 60 fps, tanpa voice-over (musik & SFX). Proyek terpisah di `tvm/` (tema finansial gelap teal dengan aksen mint/emas/biru langit, font Outfit + DM Mono, musik half-time 120 BPM). Logo dipakai apa adanya sebagai watermark kecil di pojok kanan atas.
+
+| Waktu | Scene |
+|---|---|
+| 0–5s | Hook: “SEBELUM LANJUT…” → “FOLLOW 👀” (mata animasi) → tombol `@taskkora__` diklik kursor → “Biar nggak ketinggalan konten edukasi!” |
+| 5–12s | Kartu “Rp1.000.000 HARI INI” vs “Rp1.000.000 1 TAHUN LAGI” (angka menghitung, jam 0 → 12 bulan) → “vs” berubah jadi “=?” → “Apakah nilainya sama?” |
+| 12–22s | “TIME VALUE OF MONEY” → “Nilai uang dipengaruhi oleh waktu.” → koin bergerak di timeline Hari ini → 3 th, kurva & kolom nilai naik |
+| 22–35s | Contoh: Rp1.000.000 → return 10%/tahun → penghitung naik ke **Rp1.100.000** (+Rp100.000), rumus 1.000.000 × (1 + 10%) → “Uang hari ini punya potensi untuk berkembang.” |
+| 35–45s | “Kalau Rp1.100.000 diterima 1 tahun lagi…” → koin mundur di timeline (diskonto 10%) → “Berapa nilainya hari ini?” → badge **PRESENT VALUE (PV)** + PV = 1.100.000 ÷ (1 + 10%) = Rp1.000.000 |
+| 45–53s | “TIME + RATE + VALUE” — tiga node (jam pasir, grafik, uang) mengalir ke koin “nilai uang” → “Ketiganya memengaruhi nilai uang.” |
+| 53–60s | Rp1 ≠ Rp1 (koin masa depan memudar) → “TVM membantu membandingkan nilai uang pada waktu berbeda.” → tombol “Follow @taskkora__” diklik |
+
+```bash
+python3 tvm/music.py
+node scripts/render.mjs --page tvm/index.html --audio out/tvm-music.wav --out out/tvm.mp4 --crf 18
+```
