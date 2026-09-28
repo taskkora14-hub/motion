@@ -2,6 +2,7 @@
 //   node scripts/render.mjs                      -> out/taskkora.mp4 (60 fps)
 //   node scripts/render.mjs --fps 30 --out x.mp4
 //   node scripts/render.mjs --stills 1,6.5,14   -> out/stills/*.png
+//   node scripts/render.mjs --page menunda/index.html --audio out/menunda-music.wav --out out/menunda.mp4
 // Needs: playwright (Chromium) and an ffmpeg with libx264 (env FFMPEG or imageio-ffmpeg).
 import http from 'node:http';
 import fs from 'node:fs';
@@ -19,6 +20,7 @@ const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, arr) => (
 const FPS = Number(args.fps || 60);
 const OUT = path.resolve(ROOT, args.out || 'out/taskkora.mp4');
 const AUDIO = args.audio === 'none' ? null : path.resolve(ROOT, args.audio || 'out/taskkora-music.wav');
+const PAGE = args.page || 'index.html';
 const FROM = Number(args.from || 0), TO = args.to ? Number(args.to) : null;
 
 function ffmpegPath() {
@@ -27,6 +29,7 @@ function ffmpegPath() {
 }
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.ttf': 'font/ttf' };
+const CRF = String(args.crf || 16);
 const server = http.createServer((req, res) => {
   const p = path.join(ROOT, decodeURIComponent(new URL(req.url, 'http://x').pathname));
   if (!p.startsWith(ROOT) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) { res.writeHead(404); return res.end(); }
@@ -38,7 +41,7 @@ const port = server.address().port;
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', e => console.error('page error:', e));
-await page.goto(`http://127.0.0.1:${port}/index.html?render`);
+await page.goto(`http://127.0.0.1:${port}/${PAGE}?render`);
 await page.evaluate(() => window.TASKKORA.ready);
 const DURATION = await page.evaluate(() => window.TASKKORA.DURATION);
 
@@ -59,7 +62,7 @@ if (args.stills) {
   const ff = spawn(ffmpegPath(), [
     '-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'png', '-i', '-',
     ...(hasAudio ? ['-ss', String(FROM), '-i', AUDIO, '-map', '0:v', '-map', '1:a', '-c:a', 'aac', '-b:a', '192k', '-shortest'] : []),
-    '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-profile:v', 'high', '-movflags', '+faststart', OUT,
+    '-c:v', 'libx264', '-preset', 'slow', '-crf', CRF, '-pix_fmt', 'yuv420p', '-profile:v', 'high', '-movflags', '+faststart', OUT,
   ], { stdio: ['pipe', 'inherit', 'inherit'] });
   const t0 = Date.now();
   for (let f = 0; f < frames; f++) {
