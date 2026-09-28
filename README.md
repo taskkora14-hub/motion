@@ -73,3 +73,23 @@ node scripts/render.mjs --page menunda/index.html --audio out/menunda-music.wav 
 python3 filerapi/music.py
 node scripts/render.mjs --page filerapi/index.html --audio out/filerapi-music.wav --out out/filerapi.mp4 --crf 18
 ```
+
+---
+
+# Video Edukasi — “Bingung mulai mengerjakan task dari mana?” (9:16, ±40s)
+
+**Hasil:** [`dist/mulai-dari-mana-40s-9x16.mp4`](dist/mulai-dari-mana-40s-9x16.mp4) — 1080×1920, 60 fps, tanpa voice-over. Proyek terpisah di `mulai/` (gaya UI app lilac, font Space Grotesk, musik elektronik 124 BPM). Logo dipakai apa adanya sebagai watermark kecil di pojok kanan atas.
+
+| Waktu | Scene |
+|---|---|
+| 0–5s | Hook: “Bingung mulai dari mana?” — kursor ragu di antara pilihan “?” |
+| 5–12s | Kartu “Makalah 3.000 kata” berisi benang kusut + sub-task berputar: “Kelihatan rumit banget.” |
+| 12–14.5s | Benang terurai jadi 4 garis lurus → checklist 4 langkah: “Pecah jadi 4 langkah.” |
+| 14.5–30.5s | 01 Pahami tugas → 02 Kumpulkan bahan → 03 Kerjakan bagian utama → 04 Review; tiap langkah tercentang, progress 0 → 100% |
+| 30.5–34s | Checklist lengkap, ring 100%, confetti |
+| 34–40s | “Task besar jadi lebih ringan kalau dipecah.” + “Mulai dari langkah pertama.” |
+
+```bash
+python3 mulai/music.py
+node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --out out/mulai.mp4 --crf 18
+```
