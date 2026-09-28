@@ -93,3 +93,27 @@ node scripts/render.mjs --page filerapi/index.html --audio out/filerapi-music.wa
 python3 mulai/music.py
 node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --out out/mulai.mp4 --crf 18
 ```
+
+---
+
+# Video Edukasi — “Kenapa desain terlihat tidak profesional?” (9:16, ±40s)
+
+**Hasil:** [`dist/desain-profesional-40s-9x16.mp4`](dist/desain-profesional-40s-9x16.mp4) — 1080×1920, 60 fps, tanpa voice-over (hanya musik & SFX). Proyek terpisah di `desain/` (kanvas ala design tool, font Inter + Playfair; Bebas Neue, Pacifico, Comic Neue hanya untuk contoh desain buruk; musik 108 BPM sendiri). Logo yang di-upload dipakai apa adanya (hanya di-resize) sebagai watermark kecil di pojok kanan atas.
+
+Satu poster “Workshop Desain” yang sama diperbaiki bertahap — setiap properti punya nilai *buruk* dan *baik*, dan tiap perbaikan menggerakkan satu kelompok properti.
+
+| Waktu | Scene |
+|---|---|
+| 0–4.3s | Hook: “Desainmu **bagus,** tapi kok masih terlihat **berantakan?**” — huruf *berantakan?* terus berganti font, warna & sudut |
+| 4.3–9.6s | Poster buruk muncul elemen demi elemen → “Niatnya biar menarik…” → “Hasilnya: ramai & bikin bingung.” → “Ada 4 penyebabnya:” + tracker 4 chip |
+| 9.6–15.2s | 01 **Terlalu banyak font**: kotak seleksi berlabel nama font, inventaris 5 font → 3 dicoret → teks “flip” ke **2 font** (Playfair + Inter) |
+| 15.2–20.8s | 02 **Terlalu banyak warna**: eyedropper menarik 9 swatch dari poster → menyatu jadi **3 warna** (cream, navy, coral), stiker & garis-garis hilang |
+| 20.8–26.4s | 03 **Alignment berantakan**: garis tepi kiri merah yang tersebar → satu guide biru, semua elemen *snap* ke kiri & kemiringan hilang |
+| 26.4–32s | 04 **Tidak ada hierarchy**: chip ukuran font (semua ±40px) + grafik batang → judul 112px, isi 30/26px, urutan baca 1-2-3 |
+| 32–35.8s | Hasil akhir: slider **Sebelum vs Sesudah**, kilau + stempel centang, chip “2 font · 3 warna · 1 garis · Jelas” |
+| 35.8–40s | “Desain yang baik bukan yang paling ~~ramai,~~ tapi yang paling **mudah dipahami.**” |
+
+```bash
+python3 desain/music.py
+node scripts/render.mjs --page desain/index.html --audio out/desain-music.wav --out out/desain.mp4 --crf 18
+```
