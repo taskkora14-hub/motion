@@ -117,3 +117,24 @@ Satu poster “Workshop Desain” yang sama diperbaiki bertahap — setiap prope
 python3 desain/music.py
 node scripts/render.mjs --page desain/index.html --audio out/desain-music.wav --out out/desain.mp4 --crf 18
 ```
+
+---
+
+# Video Edukasi — “Kenapa Tugas Terlihat Susah Padahal Sebenarnya Nggak?” (9:16, ±40s)
+
+**Hasil:** [`dist/tugas-terasa-ringan-40s-9x16.mp4`](dist/tugas-terasa-ringan-40s-9x16.mp4) — 1080×1920, 60 fps, tanpa voice-over. Proyek terpisah di `ringan/` (gaya sinematik gelap dengan grain & vignette, font Bricolage Grotesque, musik 120 BPM yang sinkron dengan animasi). Logo Taskkora dipakai apa adanya (hanya di-resize) sebagai watermark kecil di pojok kanan atas.
+
+| Waktu | Scene |
+|---|---|
+| 0–5s | Hook: “Pernah lihat tugas **1 halaman…** tapi rasanya kayak **100 halaman?** 😭” — satu kertas berlipat jadi 100 halaman penuh coretan sampai memenuhi layar (counter 1 → 100, kamera zoom & bergetar) |
+| 5–9s | Semua halaman tersedot kembali jadi satu → “Bukan selalu karena tugasnya susah.” → kertas terbelah jadi 5 bagian kecil |
+| 9–14s | 01 **Lihat semuanya sekaligus** — 15 sub-tugas menyala bersamaan, meter “Beban pikiran” → OVERLOAD |
+| 14–19s | 02 **Belum tahu harus mulai dari mana** — jarum kompas terus berputar di antara pilihan |
+| 19–24s | 03 **Terlalu fokus pada hasil akhir** — gunung “HASIL AKHIR” makin tinggi, “kamu” makin kecil |
+| 24–33.5s | Blok “TUGAS BESAR” terpotong jadi 5 kartu: **Baca → Pahami → Pecah → Kerjakan → Review**, tiap kartu tercentang tepat di beat, progres 0 → 100% |
+| 33.5–40s | “Tugas besar terasa **ringan** kalau dipecah menjadi **langkah kecil.**” → “Jangan selesaikan semuanya sekaligus. Selesaikan **satu langkah dulu.**” + kartu “Langkah 1” ✓ |
+
+```bash
+python3 ringan/music.py
+node scripts/render.mjs --page ringan/index.html --audio out/ringan-music.wav --out out/ringan.mp4 --crf 18
+```
