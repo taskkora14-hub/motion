@@ -112,3 +112,23 @@ node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --ou
 python3 presentasi/music.py
 node scripts/render.mjs --page presentasi/index.html --audio out/presentasi-music.wav --out out/presentasi.mp4 --crf 18
 ```
+
+---
+
+# Video Edukasi — “1 task, 5 masalah” (9:16, ±60s)
+
+**Hasil:** [`dist/1-task-5-masalah-60s-9x16.mp4`](dist/1-task-5-masalah-60s-9x16.mp4) — 1080×1920, 60 fps, tanpa voice-over (hanya musik & SFX, 120 BPM — 1 bar = 2 detik). Proyek terpisah di `limamasalah/` (UI kartu & jendela aplikasi, font Outfit + DM Mono, musik sendiri). Logo dipakai apa adanya sebagai watermark kecil di pojok kanan atas. Caption siap pakai ada di [`limamasalah/caption.txt`](limamasalah/caption.txt).
+
+| Waktu | Scene |
+|---|---|
+| 0–5s | “1 task.” — satu kartu tugas; 5 chip masalah meledak keluar (badge 1 → 5) → “5 masalah. 😭” |
+| 5–12s | “satu tugas bisa bikin pusing karena…” — ring beban 9% → 91%, lima “?” mengorbit lalu jatuh ke tray 5 slot |
+| 12–32s | Tiap masalah 2 bar, satu jendela aplikasi: desain berantakan · data belum diolah · file belum rapi · revisi belum selesai · deadline semakin dekat; tiap jendela mengecil masuk ke tray, meter beban naik 20% → 100% |
+| 32–40s | Chaos: latar gelap, kelima jendela muncul bersamaan + notifikasi menumpuk, layar bergetar, “overload 🤯” → semuanya tersedot jadi benang kusut |
+| 40–52s | “pecah masalahnya.” — benang kusut pecah jadi 5 baris checklist → “kerjakan satu per satu.” desain ✓ data ✓ file ✓ revisi ✓ deadline ✓ (tiap 3 ketukan), progress 0 → 100% |
+| 52–60s | “task besar terasa lebih ringan kalau masalahnya dipecah.” → “jangan kerjakan semuanya sekaligus.” → “follow @taskkora__ untuk konten edukasi lainnya.” |
+
+```bash
+python3 limamasalah/music.py
+node scripts/render.mjs --page limamasalah/index.html --audio out/limamasalah-music.wav --out out/limamasalah.mp4 --crf 18
+```
