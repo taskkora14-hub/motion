@@ -112,3 +112,33 @@ node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --ou
 python3 presentasi/music.py
 node scripts/render.mjs --page presentasi/index.html --audio out/presentasi-music.wav --out out/presentasi.mp4 --crf 18
 ```
+
+---
+
+# Promo — “Simple Budget Tracker” (produk gratis, 30s)
+
+Paket promo untuk template Excel gratis + panduan PDF. Proyek di `budget/` (satu `anim.js` untuk semua format lewat `?format=`, font Plus Jakarta Sans, palet biru logo `#004FC6` / navy / putih / biru muda / abu lembut, beat 120 BPM tanpa voice-over). Logo dipakai persis seperti file aslinya (JPG 1024×1280 utuh, tidak di-crop/diubah) kecil di kiri atas sepanjang video dan besar di tengah pada end card; watermark “Made by Taskkora” 30% di kanan bawah.
+
+| File | Isi |
+|---|---|
+| [`dist/simple-budget-tracker-30s-9x16.mp4`](dist/simple-budget-tracker-30s-9x16.mp4) | Video A — 1080×1920, 60 fps, 30 s (TikTok, Instagram, Threads, Facebook) |
+| [`dist/simple-budget-tracker-cover-video-16x9.mp4`](dist/simple-budget-tracker-cover-video-16x9.mp4) | Cover video — 1920×1080, 60 fps, cerita yang sama |
+| [`dist/simple-budget-tracker-cover-1920x1080.png`](dist/simple-budget-tracker-cover-1920x1080.png) | Cover image 16:9, 72 DPI |
+| [`dist/simple-budget-tracker-thumbnail-1080x1080.png`](dist/simple-budget-tracker-thumbnail-1080x1080.png) | Thumbnail 1:1, 72 DPI |
+| [`budget/COPY.txt`](budget/COPY.txt) | Caption sosial (ID) + listing Gumroad (EN) |
+
+| Waktu | Scene |
+|---|---|
+| 0–5s | “my monthly allowance is gone by the 20th... why?” — koin + ikon (kopi, ride, snack, langganan) melayang keluar dari dompet |
+| 5–12s | Sheet Transactions: pemasukan di atas, baris pengeluaran diketik, kategori sebagai chip biru |
+| 12–22s | Donut per kategori + remaining balance menghitung naik; selector mata uang USD → IDR → EUR, semua angka ikut berganti label |
+| 22–26s | Koin masuk lagi ke dompet, badge “day 30: still okay” ✓ |
+| 26–30s | End card: logo, “Simple Budget Tracker” + “Free on Gumroad”, “Made by Taskkora”, fade out |
+
+```bash
+python3 budget/music.py
+node scripts/render.mjs --page budget/index.html --audio out/budget-music.wav --out out/budget-9x16.mp4 --crf 18
+node scripts/render.mjs --page budget/index.html --query format=16x9 --audio out/budget-music.wav --out out/budget-16x9.mp4 --crf 18
+node scripts/render.mjs --page budget/index.html --query format=cover --stills 0 --dir out/bcover   # lalu simpan ulang PNG dengan dpi=72
+node scripts/render.mjs --page budget/index.html --query format=thumb --stills 0 --dir out/bthumb
+```

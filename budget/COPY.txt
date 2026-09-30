@@ -1,0 +1,60 @@
+SIMPLE BUDGET TRACKER — PROMO COPY
+
+5. SOCIAL CAPTIONS (bahasa indonesia, semua huruf kecil)
+
+TikTok
+uang jajan selalu habis sebelum akhir bulan? simple budget tracker ini gratis, tinggal catat pemasukan dan pengeluaran, langsung kelihatan grafiknya. #budgeting #templateexcel #aturkeuangan #tipshemat link di bio
+
+Instagram
+pernah ngerasa uang bulanan hilang gitu aja sebelum tanggal 20? simple budget tracker bantu kamu catat pemasukan dan pengeluaran, lengkap dengan grafik biar kelihatan uangmu lari ke mana. mata uangnya juga bisa diganti sesuai yang kamu pakai. gratis, template excel plus panduan pdf, link di bio
+
+Threads
+uang jajan sering habis tanggal 20? coba catat pakai simple budget tracker, gratis kok, link di bio
+
+Facebook
+uang bulanan sering habis sebelum akhir bulan? simple budget tracker adalah template excel gratis untuk mencatat pemasukan dan pengeluaran, lengkap dengan grafik dan mata uang yang bisa diganti. ada panduan pdf juga biar gampang mulai, link di bio
+
+
+6. GUMROAD LISTING
+
+Name:
+Simple Budget Tracker
+
+URL slug:
+simple-budget-tracker
+Fallback slug:
+simple-budget-tracker-free
+
+Summary:
+A free Excel template to track your income and expenses, with charts.
+
+Description:
+Simple Budget Tracker is a free Excel template that helps you see where your money goes each month. It comes with a short PDF guide, so you can start right away.
+
+What is inside:
+- Excel budget template (.xlsx)
+- PDF how-to guide
+
+What it does:
+- Tracks your income and expenses
+- Shows your spending in charts
+- Lets you change the currency to the one you use
+
+Who it is for:
+Students, young adults, and anyone who wants a simple way to keep an eye on their money without a complicated app.
+
+3 quick steps to start:
+- Step 1: Open the Excel template and set your currency.
+- Step 2: Add your income and your expenses as they happen.
+- Step 3: Check the charts to see where your money goes.
+
+If you get stuck, the PDF guide walks you through each part of the template. The price is $0, so just download it and give it a try.
+
+Call to action:
+I want this!
+
+Additional details:
+Format: Excel template + PDF guide
+File type: .xlsx and .pdf
+Guide: PDF how-to guide included
+Best for: Tracking monthly income and expenses

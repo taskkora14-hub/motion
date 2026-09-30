@@ -3,6 +3,7 @@
 //   node scripts/render.mjs --fps 30 --out x.mp4
 //   node scripts/render.mjs --stills 1,6.5,14   -> out/stills/*.png
 //   node scripts/render.mjs --page menunda/index.html --audio out/menunda-music.wav --out out/menunda.mp4
+//   node scripts/render.mjs --page budget/index.html --query format=16x9   (extra URL params for the page)
 // Needs: playwright (Chromium) and an ffmpeg with libx264 (env FFMPEG or imageio-ffmpeg).
 import http from 'node:http';
 import fs from 'node:fs';
@@ -22,6 +23,7 @@ const OUT = path.resolve(ROOT, args.out || 'out/taskkora.mp4');
 const AUDIO = args.audio === 'none' ? null : path.resolve(ROOT, args.audio || 'out/taskkora-music.wav');
 const PAGE = args.page || 'index.html';
 const FROM = Number(args.from || 0), TO = args.to ? Number(args.to) : null;
+const QUERY = args.query ? '&' + args.query : '';   // e.g. --query format=16x9
 
 function ffmpegPath() {
   if (process.env.FFMPEG) return process.env.FFMPEG;
@@ -41,7 +43,7 @@ const port = server.address().port;
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', e => console.error('page error:', e));
-await page.goto(`http://127.0.0.1:${port}/${PAGE}?render`);
+await page.goto(`http://127.0.0.1:${port}/${PAGE}?render${QUERY}`);
 await page.evaluate(() => window.TASKKORA.ready);
 const DURATION = await page.evaluate(() => window.TASKKORA.DURATION);
 
