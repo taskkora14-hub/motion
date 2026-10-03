@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600" width="600" height="600">
+  <title>Maskot Mangobite by Bitekora</title>
+  <!--
+    Maskot Mangobite — flat 2D, tanpa gradasi, tanpa outline.
+    Semua bagian karakter utama digambar dalam koordinat lokal (0,0 = pusat badan)
+    di dalam <g id="mascot">, jadi tiap grup bisa dianimasikan sendiri-sendiri.
+
+    Titik pivot (koordinat lokal) untuk animasi rotasi/skala:
+      leaf       : 12, -114   (pangkal daun)
+      arm-left   : -92, 20    (bahu kiri)
+      arm-right  : 92, 20     (bahu kanan)
+      leg-left   : -38, 100   (pangkal kaki kiri)
+      leg-right  : 22, 100    (pangkal kaki kanan)
+      eye-left   : -35, -15   (pusat mata, untuk scaleY kedip)
+      eye-right  : 30, -15
+      body       : 0, 118     (dasar badan, untuk squash & stretch)
+
+    Palet:
+      oranye badan #FF9F1C · tangan/kaki #F08C12 · highlight #FFC93C
+      daun #4CAF50 · urat daun #7CC67F · mata/mulut #3D2B1F · pipi #FF7B89
+  -->
+  <defs>
+    <!-- Bekas gigitan: lingkaran hitam memotong tepi kanan atas badan -->
+    <mask id="bite-mask" maskUnits="userSpaceOnUse" x="-200" y="-250" width="400" height="500">
+      <rect x="-200" y="-250" width="400" height="500" fill="#fff"/>
+      <circle cx="65" cy="-106" r="12" fill="#000"/>
+      <circle cx="81" cy="-94" r="14" fill="#000"/>
+      <circle cx="95" cy="-77" r="12" fill="#000"/>
+    </mask>
+  </defs>
+
+  <rect id="background" width="600" height="600" fill="#FFFFFF"/>
+
+  <!-- ===================== KARAKTER UTAMA ===================== -->
+  <g id="mascot" transform="translate(300 222) scale(1.1)">
+    <ellipse id="shadow" cx="-8" cy="160" rx="78" ry="9" fill="#F3EBE0"/>
+
+    <!-- Tangan & kaki di belakang badan supaya sambungannya bersih -->
+    <g id="leg-left" fill="#F08C12">
+      <rect x="-50" y="92" width="24" height="56" rx="12"/>
+      <ellipse cx="-44" cy="148" rx="17" ry="10"/>
+    </g>
+    <g id="leg-right" fill="#F08C12">
+      <rect x="10" y="92" width="24" height="56" rx="12"/>
+      <ellipse cx="28" cy="148" rx="17" ry="10"/>
+    </g>
+    <g id="arm-left" fill="#F08C12">
+      <rect x="-134" y="8" width="50" height="24" rx="12" transform="rotate(-25 -92 20)"/>
+    </g>
+    <g id="arm-right" fill="#F08C12">
+      <rect x="84" y="8" width="50" height="24" rx="12" transform="rotate(-35 92 20)"/>
+    </g>
+
+    <g id="body">
+      <g mask="url(#bite-mask)">
+        <!-- Badan mangga: lonjong, puncak condong ke kanan, perut kiri bawah lebih gemuk -->
+        <path id="body-shape" fill="#FF9F1C"
+          d="M14 -118 C62 -117 98 -78 100 -18 C101 30 88 76 60 104 C44 118 26 125 2 124 C-52 122 -98 90 -103 30 C-107 -28 -76 -80 -40 -104 C-22 -115 -4 -119 14 -118 Z"/>
+        <!-- Highlight melengkung kiri bawah, seperti di logo -->
+        <path id="body-highlight" fill="none" stroke="#FFC93C" stroke-width="11" stroke-linecap="round"
+          d="M-80 40 C-78 70 -60 92 -32 102"/>
+      </g>
+    </g>
+
+    <g id="leaf">
+      <path id="leaf-stem" d="M8 -116 Q10 -128 16 -134" fill="none" stroke="#6B4423" stroke-width="6" stroke-linecap="round"/>
+      <path id="leaf-shape" fill="#4CAF50" d="M14 -130 C4 -164 30 -190 76 -186 C78 -146 54 -124 14 -130 Z"/>
+      <path id="leaf-vein" d="M20 -134 Q42 -158 66 -178" fill="none" stroke="#7CC67F" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <g id="cheeks" fill="#FF7B89" opacity="0.55">
+      <ellipse id="cheek-left" cx="-66" cy="12" rx="15" ry="9"/>
+      <ellipse id="cheek-right" cx="60" cy="12" rx="15" ry="9"/>
+    </g>
+
+    <g id="eyes">
+      <g id="eye-left">
+        <ellipse cx="-35" cy="-15" rx="13" ry="18" fill="#3D2B1F"/>
+        <circle cx="-39" cy="-22" r="5" fill="#FFFFFF"/>
+        <circle cx="-31" cy="-8" r="2.2" fill="#FFFFFF"/>
+      </g>
+      <g id="eye-right">
+        <ellipse cx="30" cy="-15" rx="13" ry="18" fill="#3D2B1F"/>
+        <circle cx="26" cy="-22" r="5" fill="#FFFFFF"/>
+        <circle cx="34" cy="-8" r="2.2" fill="#FFFFFF"/>
+      </g>
+    </g>
+
+    <g id="mouth">
+      <path d="M-13 18 Q-2.5 30 8 18" fill="none" stroke="#3D2B1F" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ===================== LEMBAR EKSPRESI ===================== -->
+  <g id="expressions" font-family="'Baloo 2', Nunito, 'Arial Rounded MT Bold', 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#3D2B1F" text-anchor="middle">
+    <line x1="40" y1="420" x2="560" y2="420" stroke="#F3EBE0" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- 1. Senang -->
+    <g id="expr-happy" transform="translate(87 0)">
+      <rect x="-65" y="430" width="130" height="160" rx="18" fill="#FFF8EE"/>
+      <g transform="translate(0 498) scale(0.32)">
+        <use href="#leg-left"/><use href="#leg-right"/>
+        <use href="#arm-left" transform="rotate(50 -92 20)"/>
+        <use href="#arm-right" transform="rotate(-10 92 20)"/>
+        <use href="#body"/><use href="#leaf"/><use href="#cheeks"/><use href="#eyes"/>
+        <path d="M-20 14 Q-2.5 44 15 14 Z" fill="#3D2B1F" stroke="#3D2B1F" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M-10 27 Q-2.5 22 5 27 Q-2.5 34 -10 27 Z" fill="#FF7B89"/>
+      </g>
+      <text x="0" y="578">Senang</text>
+    </g>
+
+    <!-- 2. Makan -->
+    <g id="expr-eat" transform="translate(229 0)">
+      <rect x="-65" y="430" width="130" height="160" rx="18" fill="#FFF8EE"/>
+      <g transform="translate(0 498) scale(0.32)">
+        <use href="#leg-left"/><use href="#leg-right"/>
+        <use href="#arm-left"/>
+        <use href="#body"/><use href="#leaf"/><use href="#cheeks"/>
+        <g fill="none" stroke="#3D2B1F" stroke-width="6" stroke-linecap="round">
+          <path d="M-48 -12 Q-35 -26 -22 -12"/>
+          <path d="M17 -12 Q30 -26 43 -12"/>
+        </g>
+        <ellipse cx="-4" cy="24" rx="11" ry="9" fill="#3D2B1F"/>
+        <!-- irisan mangga kering + tangan yang memegangnya -->
+        <rect x="2" y="6" width="44" height="20" rx="10" fill="#FFC93C" transform="rotate(-18 24 16)"/>
+        <circle cx="34" cy="34" r="13" fill="#F08C12"/>
+        <circle cx="-30" cy="44" r="3" fill="#FFC93C"/>
+        <circle cx="-20" cy="54" r="2.5" fill="#FFC93C"/>
+      </g>
+      <text x="0" y="578">Makan</text>
+    </g>
+
+    <!-- 3. Kaget -->
+    <g id="expr-surprised" transform="translate(371 0)">
+      <rect x="-65" y="430" width="130" height="160" rx="18" fill="#FFF8EE"/>
+      <g transform="translate(0 498) scale(0.32)">
+        <use href="#leg-left"/><use href="#leg-right"/>
+        <use href="#arm-left" transform="rotate(70 -92 20)"/>
+        <use href="#arm-right" transform="rotate(-30 92 20)"/>
+        <use href="#body"/><use href="#leaf"/>
+        <g fill="#3D2B1F">
+          <ellipse cx="-35" cy="-15" rx="15" ry="22"/>
+          <ellipse cx="30" cy="-15" rx="15" ry="22"/>
+        </g>
+        <g fill="#FFFFFF">
+          <circle cx="-39" cy="-23" r="6"/><circle cx="26" cy="-23" r="6"/>
+        </g>
+        <g fill="none" stroke="#3D2B1F" stroke-width="6" stroke-linecap="round">
+          <path d="M-48 -52 Q-36 -60 -24 -54"/>
+          <path d="M19 -54 Q31 -60 43 -52"/>
+          <path d="M108 -96 L124 -108"/>
+          <path d="M114 -72 L134 -74"/>
+          <path d="M98 -118 L104 -136"/>
+        </g>
+        <ellipse cx="-2.5" cy="28" rx="9" ry="12" fill="#3D2B1F"/>
+      </g>
+      <text x="0" y="578">Kaget</text>
+    </g>
+
+    <!-- 4. Kedip -->
+    <g id="expr-wink" transform="translate(513 0)">
+      <rect x="-65" y="430" width="130" height="160" rx="18" fill="#FFF8EE"/>
+      <g transform="translate(0 498) scale(0.32)">
+        <use href="#leg-left"/><use href="#leg-right"/>
+        <use href="#arm-left"/>
+        <use href="#arm-right" transform="rotate(-25 92 20)"/>
+        <use href="#body"/><use href="#leaf"/><use href="#cheeks"/>
+        <use href="#eye-left"/>
+        <path d="M17 -14 Q30 -26 43 -14" fill="none" stroke="#3D2B1F" stroke-width="6" stroke-linecap="round"/>
+        <path d="M-15 16 Q0 34 12 14" fill="none" stroke="#3D2B1F" stroke-width="5" stroke-linecap="round"/>
+      </g>
+      <text x="0" y="578">Kedip</text>
+    </g>
+  </g>
+</svg>
