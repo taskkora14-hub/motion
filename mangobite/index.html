@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mangobite — Motion 30s</title>
+<style>
+  @font-face {
+    font-family: 'MangoRound';
+    font-weight: 700;
+    /* Fredoka Bold (SIL OFL), subset hanya huruf "Mangobite by Bitekora" */
+    src: url(data:font/woff2;base64,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) format('woff2');
+  }
+  :root {
+    --orange: #FF9F1C; --yellow: #FFC93C; --green: #4CAF50; --brown: #3D2B1F; --cream: #FFF8E7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--cream); overflow: hidden; }
+  body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; -webkit-tap-highlight-color: transparent; }
+  #stage { position: fixed; inset: 0; display: grid; place-items: center; }
+  #scene { width: min(100vw, calc(100dvh * 9 / 16)); aspect-ratio: 9 / 16; display: block; }
+  body.hidden-ui, body.hidden-ui * { cursor: none; }
+  body.hidden-ui #ui, body.hidden-ui #bigplay, body.render #ui, body.render #bigplay { display: none !important; }
+
+  #bigplay {
+    position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 112px; height: 112px; border-radius: 50%; border: 0; cursor: pointer;
+    background: var(--orange); color: var(--cream); box-shadow: 0 10px 0 var(--brown);
+    display: grid; place-items: center; transition: transform .15s;
+  }
+  #bigplay:active { transform: translate(-50%, -46%); box-shadow: 0 6px 0 var(--brown); }
+  #bigplay svg { width: 46px; height: 46px; margin-left: 8px; }
+
+  #ui {
+    position: fixed; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translateX(-50%);
+    width: min(calc(100vw - 24px), 520px);
+    background: var(--brown); color: var(--cream); border-radius: 18px; padding: 10px 12px;
+    display: grid; gap: 8px; font-size: 13px; user-select: none;
+  }
+  #ui .row { display: flex; align-items: center; gap: 8px; }
+  #ui button {
+    border: 0; border-radius: 10px; background: rgba(255, 248, 231, .12); color: var(--cream);
+    font: inherit; font-weight: 600; height: 34px; min-width: 34px; padding: 0 10px; cursor: pointer;
+  }
+  #ui button:hover { background: rgba(255, 248, 231, .22); }
+  #ui button.on { background: var(--orange); color: var(--brown); }
+  #ui button.icon { width: 38px; padding: 0; display: grid; place-items: center; }
+  #ui button.icon svg { width: 16px; height: 16px; }
+  #ui .speed { display: flex; gap: 3px; margin-left: auto; }
+  #ui .speed button { padding: 0 8px; }
+  #scrub { flex: 1; accent-color: var(--orange); min-width: 0; }
+  #time { font-variant-numeric: tabular-nums; min-width: 78px; text-align: right; opacity: .85; }
+  #ui .hint { opacity: .6; font-size: 11.5px; }
+  #ui button { white-space: nowrap; }
+  @media (max-width: 480px) { #ui .keys { display: none; } }
+  #ui .grow { flex: 1; }
+  #toast {
+    position: fixed; left: 50%; top: 18px; transform: translateX(-50%); padding: 8px 14px; border-radius: 999px;
+    background: var(--brown); color: var(--cream); font-size: 13px; opacity: 0; transition: opacity .3s; pointer-events: none;
+  }
+  #toast.show { opacity: .92; }
+  body.render #toast { display: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="bite-mask" maskUnits="userSpaceOnUse" x="-200" y="-250" width="400" height="500">
+      <rect x="-200" y="-250" width="400" height="500" fill="#fff"/>
+      <circle cx="65" cy="-106" r="12" fill="#000"/>
+      <circle cx="81" cy="-94" r="14" fill="#000"/>
+      <circle cx="95" cy="-77" r="12" fill="#000"/>
+    </mask>
+    <path id="sparkle" d="M0 -1 Q0.16 -0.16 1 0 Q0.16 0.16 0 1 Q-0.16 0.16 -1 0 Q-0.16 -0.16 0 -1 Z"/>
+  </defs>
+
+  <rect width="1080" height="1920" fill="#FFF8E7"/>
+
+  <!-- rig: posisi & skala maskot di layar (koordinat lokal maskot sama dengan file SVG asli) -->
+  <g id="rig">
+    <ellipse id="shadow" cx="-8" cy="160" rx="78" ry="9" fill="#3D2B1F" opacity="0.1"/>
+    <g id="stars"></g>
+
+    <g id="hop">
+     <g id="spin">
+      <g id="tilt">
+       <g id="squash">
+        <g id="leg-left" fill="#F08C12">
+          <rect x="-50" y="92" width="24" height="56" rx="12"/>
+          <ellipse cx="-44" cy="148" rx="17" ry="10"/>
+        </g>
+        <g id="leg-right" fill="#F08C12">
+          <rect x="10" y="92" width="24" height="56" rx="12"/>
+          <ellipse cx="28" cy="148" rx="17" ry="10"/>
+        </g>
+        <g id="arm-left" fill="#F08C12">
+          <rect x="-134" y="8" width="50" height="24" rx="12" transform="rotate(-25 -92 20)"/>
+        </g>
+        <g id="arm-right" fill="#F08C12">
+          <rect x="84" y="8" width="50" height="24" rx="12" transform="rotate(-35 92 20)"/>
+        </g>
+
+        <g id="body">
+          <g mask="url(#bite-mask)">
+            <path id="body-shape" fill="#FF9F1C"
+              d="M14 -118 C62 -117 98 -78 100 -18 C101 30 88 76 60 104 C44 118 26 125 2 124 C-52 122 -98 90 -103 30 C-107 -28 -76 -80 -40 -104 C-22 -115 -4 -119 14 -118 Z"/>
+            <path id="body-highlight" fill="none" stroke="#FFC93C" stroke-width="11" stroke-linecap="round"
+              d="M-80 40 C-78 70 -60 92 -32 102"/>
+          </g>
+        </g>
+
+        <g id="leaf">
+          <path d="M8 -116 Q10 -128 16 -134" fill="none" stroke="#6B4423" stroke-width="6" stroke-linecap="round"/>
+          <path fill="#4CAF50" d="M14 -130 C4 -164 30 -190 76 -186 C78 -146 54 -124 14 -130 Z"/>
+          <path d="M20 -134 Q42 -158 66 -178" fill="none" stroke="#7CC67F" stroke-width="4" stroke-linecap="round"/>
+        </g>
+
+        <g id="face">
+          <g id="cheeks" fill="#FF7B89" opacity="0.55">
+            <ellipse id="cheek-left" cx="-66" cy="12" rx="15" ry="9"/>
+            <ellipse id="cheek-right" cx="60" cy="12" rx="15" ry="9"/>
+          </g>
+
+          <g id="eyes">
+            <g id="eye-left">
+              <ellipse cx="-35" cy="-15" rx="13" ry="18" fill="#3D2B1F"/>
+              <circle cx="-39" cy="-22" r="5" fill="#FFFFFF"/>
+              <circle cx="-31" cy="-8" r="2.2" fill="#FFFFFF"/>
+            </g>
+            <g id="eye-right">
+              <ellipse cx="30" cy="-15" rx="13" ry="18" fill="#3D2B1F"/>
+              <circle cx="26" cy="-22" r="5" fill="#FFFFFF"/>
+              <circle cx="34" cy="-8" r="2.2" fill="#FFFFFF"/>
+            </g>
+            <!-- mata senang / kedip (dari lembar ekspresi) -->
+            <g fill="none" stroke="#3D2B1F" stroke-width="6" stroke-linecap="round">
+              <path id="arc-left" d="M-48 -12 Q-35 -26 -22 -12"/>
+              <path id="arc-right" d="M17 -12 Q30 -26 43 -12"/>
+            </g>
+            <g id="brows" fill="none" stroke="#3D2B1F" stroke-width="6" stroke-linecap="round">
+              <path d="M-48 -52 Q-36 -60 -24 -54"/>
+              <path d="M19 -54 Q31 -60 43 -52"/>
+            </g>
+          </g>
+
+          <g id="mouth">
+            <path id="mouth-smile" d="M-13 18 Q-2.5 30 8 18" fill="none" stroke="#3D2B1F" stroke-width="5" stroke-linecap="round"/>
+            <g id="mouth-grin">
+              <path d="M-20 14 Q-2.5 44 15 14 Z" fill="#3D2B1F" stroke="#3D2B1F" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M-10 27 Q-2.5 22 5 27 Q-2.5 34 -10 27 Z" fill="#FF7B89"/>
+            </g>
+            <ellipse id="mouth-chew" cx="-4" cy="24" rx="11" ry="9" fill="#3D2B1F"/>
+            <ellipse id="mouth-o" cx="-2.5" cy="28" rx="9" ry="12" fill="#3D2B1F"/>
+            <path id="mouth-smirk" d="M-15 16 Q0 34 12 14" fill="none" stroke="#3D2B1F" stroke-width="5" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <!-- camilan: irisan mangga kering + tangan (dari ekspresi "Makan") -->
+        <g id="snack">
+          <g id="slice"><rect x="2" y="6" width="44" height="20" rx="10" fill="#FFC93C" transform="rotate(-18 24 16)"/></g>
+          <circle cx="34" cy="34" r="13" fill="#F08C12"/>
+        </g>
+        <g id="crumbs"></g>
+
+        <g id="shock" fill="none" stroke="#3D2B1F" stroke-width="6" stroke-linecap="round">
+          <path d="M108 -96 L124 -108"/>
+          <path d="M114 -72 L134 -74"/>
+          <path d="M98 -118 L104 -136"/>
+        </g>
+       </g>
+      </g>
+     </g>
+    </g>
+    <g id="fx"></g>
+  </g>
+
+  <g id="wordmark" font-family="MangoRound, 'Arial Rounded MT Bold', 'Nunito', sans-serif" font-weight="700" fill="#3D2B1F" text-anchor="middle">
+    <text id="wm-measure" x="540" y="1420" font-size="176">Mangobite</text>
+    <g id="wm-letters"></g>
+    <text id="byline" x="540" y="1520" font-size="68" letter-spacing="1">by Bitekora</text>
+  </g>
+</svg>
+</div>
+
+<button id="bigplay" aria-label="Putar"><svg viewBox="0 0 24 24"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5Z" fill="currentColor"/></svg></button>
+
+<div id="ui">
+  <div class="row">
+    <button id="btn-play" class="icon" aria-label="Play/Pause"></button>
+    <button id="btn-replay" class="icon" aria-label="Replay"><svg viewBox="0 0 24 24"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7Z" fill="currentColor"/></svg></button>
+    <input id="scrub" type="range" min="0" max="30" step="0.01" value="0" aria-label="Posisi waktu">
+    <span id="time">0.0 / 30.0</span>
+  </div>
+  <div class="row">
+    <span class="hint">Kecepatan</span>
+    <div class="speed">
+      <button data-speed="0.25">0.25×</button><button data-speed="0.5">0.5×</button><button data-speed="1" class="on">1×</button><button data-speed="1.5">1.5×</button><button data-speed="2">2×</button>
+    </div>
+  </div>
+  <div class="row">
+    <button id="btn-rec">● Mode rekam</button>
+    <button id="btn-hide">Sembunyikan (H)</button>
+    <span class="grow"></span>
+    <span class="hint keys">Spasi: play · R: ulang · F: layar penuh</span>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+(() => {
+  const DURATION = 30;
+  const $ = id => document.getElementById(id);
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const set = (el, tr) => el.setAttribute('transform', tr);
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const TAU = Math.PI * 2;
+
+  // ---------- easing ----------
+  const E = {
+    lin: x => x,
+    io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+    in: x => x * x * x,
+    out: x => 1 - Math.pow(1 - x, 3),
+    inQ: x => x * x,
+    outQ: x => 1 - (1 - x) * (1 - x),
+    back: x => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+    backS: x => { const c1 = 0.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+  };
+  // keyframe track: [[time, value, easeKeMenujuKeyIni], ...]
+  const track = keys => {
+    keys = keys.slice().sort((a, b) => a[0] - b[0]);
+    return t => {
+      if (t <= keys[0][0]) return keys[0][1];
+      for (let i = 1; i < keys.length; i++) {
+        const [t1, v1, e] = keys[i];
+        if (t <= t1) {
+          const [t0, v0] = keys[i - 1];
+          return v0 + (v1 - v0) * E[e || 'io']((t - t0) / (t1 - t0));
+        }
+      }
+      return keys[keys.length - 1][1];
+    };
+  };
+  // envelope 0..1 naik di [a, a+fi], turun di [b-fo, b]
+  const env = (t, a, b, fi = .2, fo = .2) => E.io(clamp((t - a) / fi)) * (1 - E.io(clamp((t - (b - fo)) / fo)));
+  // pegas teredam untuk goyangan daun/tangan setelah benturan
+  const spring = (t, evs, freq = 2.6, decay = 4.2) => {
+    let v = 0;
+    for (const [ti, amp] of evs) if (t > ti) { const u = t - ti; v += amp * Math.exp(-u * decay) * Math.sin(TAU * freq * u); }
+    return v;
+  };
+  // bobot crossfade antar-state (mulut / mata): yang lama mengecil, yang baru "pop" dengan overshoot
+  const weights = (states, t, dIn = .16, dOut = .09) => {
+    const w = {};
+    states.forEach(([ts, name], i) => {
+      const te = i + 1 < states.length ? states[i + 1][0] : 1e9;
+      const a = i === 0 ? 1 : E.back(clamp((t - ts) / dIn));
+      const o = 1 - E.in(clamp((t - (te - dOut)) / dOut));
+      w[name] = (w[name] || 0) + (t < ts - dOut ? 0 : a * o);
+    });
+    return w;
+  };
+
+  // ================= TIMELINE =================
+  const HOP = [[0, 620]], SY = [[0, 1.25]], TILT = [[0, 0]], SPIN = [[0, 0]];
+  const landings = [];   // [waktu, amplitudo] untuk pegas daun & tangan
+  const k = (arr, t, v, e) => arr.push([t, v, e]);
+
+  // 0–3 s: muncul memantul dari bawah
+  k(HOP, .62, -110, 'outQ'); k(HOP, 1.0, 0, 'inQ');
+  k(HOP, 1.1, 0); k(HOP, 1.32, -42, 'outQ'); k(HOP, 1.54, 0, 'inQ');
+  k(HOP, 1.6, 0); k(HOP, 1.72, -12, 'outQ'); k(HOP, 1.84, 0, 'inQ');
+  k(SY, .55, 1.02, 'out'); k(SY, .95, 1.12, 'inQ'); k(SY, 1.07, .7, 'out'); k(SY, 1.18, 1.12, 'out');
+  k(SY, 1.34, .98); k(SY, 1.52, 1.06); k(SY, 1.6, .84, 'out'); k(SY, 1.7, 1.05, 'out'); k(SY, 1.8, 1);
+  k(SY, 1.86, .93, 'out'); k(SY, 1.96, 1.02); k(SY, 2.1, 1);
+  landings.push([1.02, 22], [1.55, 14], [1.85, 7]);
+
+  // 8–14 s: lompat senang 3x (yang ketiga lebih tinggi + berputar)
+  const jump = (t0, antic, air, h) => {
+    const tl = t0 + antic, tg = tl + air;
+    k(SY, t0, 1); k(SY, tl, .78, 'out'); k(SY, tl + .09, 1.16, 'out'); k(SY, tl + air * .5, .98);
+    k(SY, tg - .02, 1.1, 'inQ'); k(SY, tg + .08, .74, 'out'); k(SY, tg + .22, 1.07, 'out'); k(SY, tg + .36, .98); k(SY, tg + .5, 1);
+    k(HOP, tl, 0); k(HOP, tl + air / 2, -h, 'outQ'); k(HOP, tg, 0, 'inQ');
+    landings.push([tl, -10], [tg + .02, 20]);
+    return { tl, tg };
+  };
+  const j1 = jump(8.0, .3, .8, 110), j2 = jump(10.0, .3, .8, 115), j3 = jump(12.0, .32, 1.0, 160);
+  k(TILT, j1.tl, 0); k(TILT, j1.tl + .4, -7, 'out'); k(TILT, j1.tg + .1, 0, 'io');
+  k(TILT, j2.tl, 0); k(TILT, j2.tl + .4, 7, 'out'); k(TILT, j2.tg + .1, 0, 'io');
+  k(SPIN, j3.tl + .05, 0); k(SPIN, j3.tg - .05, -360, 'io');
+
+  // 20–25 s: wow + kedip genit
+  k(TILT, 22.95, 0); k(TILT, 23.25, -7, 'back'); k(TILT, 24.1, -7); k(TILT, 24.5, 0, 'io');
+  landings.push([20.4, 16], [23.25, 10]);
+
+  // 25–30 s: lompat kecil ke atas, logo muncul
+  k(SY, 24.85, 1); k(SY, 25.05, .85, 'out'); k(SY, 25.15, 1.12, 'out'); k(SY, 25.55, 1);
+  k(SY, 25.95, 1.08, 'inQ'); k(SY, 26.05, .84, 'out'); k(SY, 26.2, 1.05, 'out'); k(SY, 26.38, 1);
+  k(HOP, 25.05, 0); k(HOP, 25.5, -70, 'outQ'); k(HOP, 26.0, 0, 'inQ');
+  landings.push([25.05, -8], [26.05, 14]);
+
+  const hopT = track(HOP), syT = track(SY), tiltT = track(TILT), spinT = track(SPIN);
+  const rigFeet = track([[0, 1400], [25.1, 1400], [26.0, 1090, 'backS']]);
+  const rigS = track([[0, 2.7], [25.1, 2.7], [26.0, 2.25, 'io']]);
+  const shadowIn = track([[0, 0], [.4, 0], [1.0, 1, 'out']]);
+
+  // ekspresi
+  const MOUTH = [[0, 'smile'], [3.4, 'grin'], [7.4, 'smile'], [7.9, 'grin'], [13.9, 'smile'], [14.45, 'o'], [14.95, 'chew'],
+    [19.35, 'grin'], [20.2, 'o'], [22.6, 'smile'], [23.2, 'smirk'], [24.3, 'smile'], [26.9, 'grin'], [29.1, 'smile']];
+  const EYES = [[0, 'open'], [14.95, 'happy'], [19.35, 'open'], [23.2, 'wink'], [24.1, 'open']];
+  const BLINKS = [2.5, 4.3, 6.3, 13.4, 24.9, 28.9];
+
+  // makan
+  const BITES = [15.0, 16.4, 17.8];
+  const snackS = track([[0, 0], [14.35, 0], [14.75, 1, 'back'], [19.2, 1], [19.45, 0, 'in']]);
+  const sliceS = track([[0, 1], [15.02, 1], [15.12, .72, 'out'], [16.42, .72], [16.52, .45, 'out'], [17.82, .45], [17.92, 0, 'out']]);
+  const armRS = track([[0, 1], [14.2, 1], [14.4, 0, 'in'], [19.45, 0], [19.75, 1, 'back']]);
+
+  // wow
+  const wowW = track([[0, 0], [20.15, 0], [20.45, 1, 'back'], [22.45, 1], [22.75, 0, 'io']]);
+  const grow = track([[0, 1], [20.0, 1], [20.15, .95, 'out'], [20.45, 1.08, 'back'], [22.45, 1.07], [22.8, 1, 'io']]);
+  const winkW = track([[0, 0], [23.15, 0], [23.35, 1, 'back'], [24.0, 1], [24.3, 0, 'io']]);
+
+  // teks
+  const WM_START = 26.0, WM_STEP = .065;
+  const byA = track([[0, 0], [26.85, 0], [27.35, 1, 'out']]);
+
+  // lambaian tangan kanan
+  const wave = (t, a, b) => {
+    const e = E.back(clamp((t - a) / .35)) * (1 - E.io(clamp((t - (b - .35)) / .35)));
+    return { arm: e * (-48 + 24 * Math.sin(TAU * 2.1 * (t - a))), sway: e * 2.2 * Math.sin(TAU * 1.05 * (t - a)) };
+  };
+
+  // ---------- elemen ----------
+  const el = {};
+  ['rig', 'shadow', 'hop', 'spin', 'tilt', 'squash', 'leg-left', 'leg-right', 'arm-left', 'arm-right', 'leaf', 'face',
+    'cheek-left', 'cheek-right', 'eye-left', 'eye-right', 'arc-left', 'arc-right', 'brows', 'mouth-smile', 'mouth-grin',
+    'mouth-chew', 'mouth-o', 'mouth-smirk', 'snack', 'slice', 'shock', 'stars', 'fx', 'byline', 'wm-measure', 'wm-letters'
+  ].forEach(id => el[id] = $(id));
+
+  const mk = (parent, tag, attrs) => { const n = document.createElementNS(SVGNS, tag); for (const a in attrs) n.setAttribute(a, attrs[a]); parent.appendChild(n); return n; };
+  const sparkle = (parent, color) => mk(parent, 'use', { href: '#sparkle', fill: color });
+
+  // remah mangga (deterministik)
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const crumbs = [];
+  BITES.forEach(bt => { for (let i = 0; i < 6; i++) crumbs.push({ t0: bt + .02, vx: -150 + rnd() * 200, vy: -170 + rnd() * 90, r: 2.5 + rnd() * 3.5,
+    n: mk($('crumbs'), 'circle', { r: 1, fill: i % 2 ? '#FF9F1C' : '#FFC93C' }) }); });
+
+  // bintang berkilau saat makan
+  const STAR_POS = [[-165, -120, 20], [160, -70, 24], [-175, 40, 16], [175, 70, 18], [-115, -205, 15], [125, -195, 19], [0, -250, 14]];
+  const stars = STAR_POS.map(([x, y, s], i) => ({ x, y, s, i, n: sparkle(el.stars, i % 2 ? '#FF9F1C' : '#FFC93C') }));
+  // ledakan bintang saat "wow"
+  const burst = Array.from({ length: 10 }, (_, i) => ({ a: (i / 10) * TAU + .2, s: i % 2 ? 13 : 19, n: sparkle(el.fx, i % 3 === 0 ? '#4CAF50' : i % 2 ? '#FF9F1C' : '#FFC93C') }));
+  const winkStar = sparkle(el.fx, '#FFC93C');
+
+  // huruf "Mangobite" satu per satu
+  let letters = [];
+  const layoutWordmark = () => {
+    const m = el['wm-measure'], s = m.textContent;
+    el['wm-letters'].textContent = '';
+    letters = [...s].map((ch, i) => {
+      const x0 = m.getStartPositionOfChar(i).x, w = m.getExtentOfChar(i).width;
+      const n = mk(el['wm-letters'], 'text', { x: (x0 + w / 2).toFixed(1), y: 1420, 'font-size': 176 });
+      n.textContent = ch;
+      return { n, cx: x0 + w / 2 };
+    });
+    m.style.display = 'none';
+  };
+
+  // ================= RENDER (fungsi murni dari waktu) =================
+  const render = t => {
+    t = clamp(t, 0, DURATION);
+    const hop = hopT(t);
+    const lift = clamp(-hop / 110, 0, 1.3);
+
+    // squash & stretch + napas
+    const chewE = env(t, 15.0, 19.3, .15, .15), chewPh = TAU * 2.4 * (t - 15.0);
+    let sy = syT(t) * (1 + .013 * Math.sin(TAU * t / 2.4)) * (1 + .025 * chewE * Math.sin(chewPh));
+    const sx = 1 + (1 - sy) * .85, g = grow(t);
+
+    const feet = rigFeet(t), S = rigS(t);
+    set(el.rig, `translate(540 ${(feet - 158 * S).toFixed(2)}) scale(${S.toFixed(4)})`);
+    set(el.hop, `translate(0 ${hop.toFixed(2)})`);
+    set(el.spin, `rotate(${spinT(t).toFixed(2)} 0 0)`);
+
+    const w1 = wave(t, 3.3, 7.4), w2 = wave(t, 27.0, 29.1);
+    const wowE = wowW(t), wink = winkW(t);
+    const tremble = 1.3 * Math.sin(TAU * 11 * t) * env(t, 20.4, 21.3, .05, .3);
+    set(el.tilt, `rotate(${(tiltT(t) + w1.sway + w2.sway + tremble).toFixed(2)} 0 158)`);
+    set(el.squash, `translate(0 158) scale(${(sx * g).toFixed(4)} ${(sy * g).toFixed(4)}) translate(0 -158)`);
+
+    // bayangan
+    const sh = shadowIn(t) * (1 - .55 * clamp(-hop / 160)) * (hop >= 0 ? sx * g : 1);
+    set(el.shadow, `translate(-8 160) scale(${sh.toFixed(4)} ${Math.max(sh, .001).toFixed(4)}) translate(8 -160)`);
+    el.shadow.setAttribute('opacity', (0.11 * (1 - .5 * clamp(-hop / 160))).toFixed(3));
+
+    // tangan
+    const flop = spring(t, landings, 2.4, 4.5);
+    const squashArms = (1 - Math.min(sy, 1)) * 40;
+    const armL = 58 * lift - squashArms + flop * .7 + 70 * wowE + 6 * chewE * Math.sin(chewPh * .5);
+    const armR = -26 * lift + squashArms - flop * .5 - 30 * wowE - 22 * wink + w1.arm + w2.arm;
+    const rs = Math.max(armRS(t), 0.0001);
+    set(el['arm-left'], `rotate(${armL.toFixed(2)} -92 20)`);
+    set(el['arm-right'], `translate(92 20) rotate(${armR.toFixed(2)}) scale(${rs.toFixed(4)}) translate(-92 -20)`);
+    set(el['leg-left'], `rotate(${(9 * clamp(lift)).toFixed(2)} -38 100)`);
+    set(el['leg-right'], `rotate(${(-9 * clamp(lift)).toFixed(2)} 22 100)`);
+
+    // daun
+    const leaf = spring(t, landings, 2.7, 3.6) * 1.1 + 3 * Math.sin(TAU * t / 2.6) + 8 * wowE * Math.sin(TAU * 4 * t) * env(t, 20.3, 21.2, .05, .4);
+    set(el.leaf, `rotate(${leaf.toFixed(2)} 12 -114)`);
+
+    // wajah
+    set(el.face, `translate(0 ${(1.6 * chewE * Math.sin(chewPh)).toFixed(2)})`);
+    const chewOpen = .5 - .5 * Math.cos(chewPh);
+    const cheek = 1 + .24 * chewE * chewOpen + .3 * wink;
+    set(el['cheek-left'], `translate(-66 12) scale(${cheek.toFixed(3)}) translate(66 -12)`);
+    set(el['cheek-right'], `translate(60 12) scale(${cheek.toFixed(3)}) translate(-60 -12)`);
+
+    let blink = 1;
+    for (const b of BLINKS) { const u = (t - b) / .18; if (u > 0 && u < 1) blink = Math.min(blink, 1 - .92 * Math.pow(Math.sin(Math.PI * u), .7)); }
+    const ew = weights(EYES, t);
+    const es = 1 + .22 * wowE;
+    const eye = (n, cx, open) => {
+      const o = Math.max(open * blink, 0);
+      n.style.visibility = o < .01 ? 'hidden' : 'visible';
+      set(n, `translate(${cx} -15) scale(${es.toFixed(3)} ${(es * Math.max(o, .01)).toFixed(3)}) translate(${-cx} 15)`);
+    };
+    eye(el['eye-left'], -35, (ew.open || 0) + (ew.wink || 0));
+    eye(el['eye-right'], 30, ew.open || 0);
+    const arc = (n, cx, w) => { n.style.visibility = w < .01 ? 'hidden' : 'visible'; set(n, `translate(${cx} -16) scale(${Math.max(w, .01).toFixed(3)}) translate(${-cx} 16)`); };
+    arc(el['arc-left'], -35, ew.happy || 0);
+    arc(el['arc-right'], 30, (ew.happy || 0) + (ew.wink || 0));
+    el.brows.style.visibility = wowE < .01 ? 'hidden' : 'visible';
+    set(el.brows, `translate(0 ${(-12 * (1 - Math.min(wowE, 1))).toFixed(2)})`);
+    el.brows.setAttribute('opacity', clamp(wowE).toFixed(3));
+
+    const mw = weights(MOUTH, t);
+    for (const name of ['smile', 'grin', 'chew', 'o', 'smirk']) {
+      const n = el['mouth-' + name], w = mw[name] || 0;
+      n.style.visibility = w < .01 ? 'hidden' : 'visible';
+      set(n, `translate(-2.5 22) scale(${Math.max(w, .01).toFixed(3)}) translate(2.5 -22)`);
+    }
+    el['mouth-chew'].setAttribute('ry', (2.5 + 8 * chewOpen * chewE + 8 * (1 - chewE)).toFixed(2));
+
+    // camilan
+    const ss = snackS(t);
+    el.snack.style.visibility = ss < .01 ? 'hidden' : 'visible';
+    let hb = 0; for (const b of BITES) { const u = (t - (b - .25)) / .45; if (u > 0 && u < 1) hb = Math.max(hb, Math.sin(Math.PI * u)); }
+    set(el.snack, `translate(${(-7 * hb).toFixed(2)} ${(-9 * hb).toFixed(2)}) translate(34 34) scale(${Math.max(ss, .01).toFixed(3)}) translate(-34 -34)`);
+    const sl = sliceS(t);
+    el.slice.style.visibility = sl < .01 ? 'hidden' : 'visible';
+    set(el.slice, `translate(40 22) scale(${Math.max(sl, .01).toFixed(3)}) translate(-40 -22)`);
+    for (const c of crumbs) {
+      const u = t - c.t0;
+      if (u < 0 || u > .75) { c.n.style.visibility = 'hidden'; continue; }
+      c.n.style.visibility = 'visible';
+      c.n.setAttribute('cx', (-4 + c.vx * u).toFixed(2));
+      c.n.setAttribute('cy', (28 + c.vy * u + 380 * u * u).toFixed(2));
+      c.n.setAttribute('r', (c.r * (1 - u / .75 * .6)).toFixed(2));
+      c.n.setAttribute('opacity', (1 - Math.pow(u / .75, 2)).toFixed(3));
+    }
+
+    // bintang berkilau saat makan
+    const starE = env(t, 15.0, 19.8, .3, .4);
+    for (const s of stars) {
+      const ph = (((t - 15.0 - s.i * .31) % 1.3) + 1.3) % 1.3 / 1.3;
+      const sc = s.s * starE * Math.pow(Math.sin(Math.PI * ph), 1.4);
+      s.n.style.visibility = sc < .2 ? 'hidden' : 'visible';
+      set(s.n, `translate(${s.x} ${s.y}) rotate(${(ph * 90).toFixed(1)}) scale(${Math.max(sc, .01).toFixed(3)})`);
+    }
+
+    // kaget: garis kejut + ledakan bintang
+    el.shock.style.visibility = wowE < .01 ? 'hidden' : 'visible';
+    set(el.shock, `translate(108 -100) scale(${Math.max(wowE, .01).toFixed(3)}) translate(-108 100)`);
+    const bu = (t - 20.3) / .95;
+    for (const b of burst) {
+      if (bu <= 0 || bu >= 1) { b.n.style.visibility = 'hidden'; continue; }
+      b.n.style.visibility = 'visible';
+      const r = 120 + 150 * E.out(bu), sc = b.s * Math.sin(Math.PI * bu);
+      set(b.n, `translate(${(Math.cos(b.a) * r).toFixed(1)} ${(-10 + Math.sin(b.a) * r * 1.1).toFixed(1)}) rotate(${(bu * 120).toFixed(1)}) scale(${sc.toFixed(3)})`);
+    }
+    const wu = (t - 23.25) / .8;
+    winkStar.style.visibility = wu > 0 && wu < 1 ? 'visible' : 'hidden';
+    if (wu > 0 && wu < 1) set(winkStar, `translate(${(78 + 14 * wu).toFixed(1)} ${(-52 - 18 * wu).toFixed(1)}) rotate(${(wu * 140).toFixed(1)}) scale(${(16 * Math.sin(Math.PI * wu)).toFixed(3)})`);
+
+    // teks
+    letters.forEach((L, i) => {
+      const u = clamp((t - (WM_START + i * WM_STEP)) / .5);
+      L.n.style.visibility = u <= 0 ? 'hidden' : 'visible';
+      const sc = Math.max(E.back(u), .01), dy = 70 * (1 - E.out(u));
+      set(L.n, `translate(0 ${dy.toFixed(2)}) translate(${L.cx.toFixed(1)} 1420) scale(${sc.toFixed(3)}) translate(${(-L.cx).toFixed(1)} -1420)`);
+    });
+    const ba = byA(t);
+    el.byline.setAttribute('opacity', ba.toFixed(3));
+    set(el.byline, `translate(0 ${(30 * (1 - ba)).toFixed(2)})`);
+  };
+
+  // ================= PLAYER =================
+  const params = new URLSearchParams(location.search);
+  const isRender = params.has('render');
+  if (isRender) document.body.classList.add('render');
+
+  let t = 0, speed = 1, playing = false, last = 0, recording = false, recTimer = 0;
+  const btnPlay = $('btn-play'), scrub = $('scrub'), timeEl = $('time'), bigplay = $('bigplay'), toast = $('toast');
+  const ICON_PLAY = '<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z" fill="currentColor"/></svg>';
+  const ICON_PAUSE = '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>';
+  const syncUI = () => {
+    btnPlay.innerHTML = playing ? ICON_PAUSE : ICON_PLAY;
+    scrub.value = t.toFixed(2);
+    timeEl.textContent = `${t.toFixed(1)} / ${DURATION.toFixed(1)}`;
+  };
+  let toastTimer;
+  const say = msg => { toast.textContent = msg; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 1800); };
+
+  const play = () => { if (t >= DURATION) t = 0; playing = true; toast.classList.remove('show'); bigplay.style.display = 'none'; last = performance.now(); syncUI(); };
+  const pause = () => { playing = false; syncUI(); };
+  const replay = () => { t = 0; play(); };
+  const setHidden = (h, quiet) => { document.body.classList.toggle('hidden-ui', h); if (h && !quiet) say('H / ketuk layar (saat berhenti) untuk kontrol'); };
+
+  const loop = now => {
+    if (playing) {
+      t += (now - last) / 1000 * speed;
+      if (t >= DURATION) { t = DURATION; playing = false; if (recording) recording = false; }
+    }
+    last = now;
+    render(t);
+    syncUI();
+    requestAnimationFrame(loop);
+  };
+
+  btnPlay.onclick = () => (playing ? pause() : play());
+  bigplay.onclick = replay;
+  $('btn-replay').onclick = replay;
+  scrub.oninput = () => { t = +scrub.value; bigplay.style.display = 'none'; };
+  document.querySelectorAll('[data-speed]').forEach(b => b.onclick = () => {
+    speed = +b.dataset.speed;
+    document.querySelectorAll('[data-speed]').forEach(x => x.classList.toggle('on', x === b));
+  });
+  $('btn-hide').onclick = () => setHidden(true);
+  // Mode rekam: sembunyikan kontrol, tahan 1 detik di layar kosong, lalu putar dari awal.
+  $('btn-rec').onclick = () => {
+    setHidden(true, true); pause(); t = 0; recording = true; bigplay.style.display = 'none';
+    clearTimeout(recTimer); recTimer = setTimeout(play, 1000);
+  };
+  // Di HP: setelah animasi selesai, ketuk layar untuk memunculkan kontrol lagi.
+  $('stage').addEventListener('click', () => {
+    if (document.body.classList.contains('hidden-ui') && !recording && !playing) setHidden(false);
+  });
+  const fullscreen = () => (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.());
+  addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' && e.key !== ' ') return;
+    const key = e.key.toLowerCase();
+    if (key === ' ') { e.preventDefault(); playing ? pause() : play(); }
+    else if (key === 'h') { setHidden(!document.body.classList.contains('hidden-ui')); }
+    else if (key === 'r') replay();
+    else if (key === 'f') fullscreen();
+    else if (key === 'arrowright') t = Math.min(DURATION, t + 1);
+    else if (key === 'arrowleft') t = Math.max(0, t - 1);
+    else if ('1234'.includes(key) && key) document.querySelectorAll('[data-speed]')[+key].click();
+  });
+
+  const ready = document.fonts.ready.then(() => document.fonts.load('700 176px MangoRound')).then(() => { layoutWordmark(); });
+  ready.then(() => {
+    if (params.has('t')) { t = +params.get('t'); bigplay.style.display = 'none'; }
+    else if (params.has('autoplay')) play();
+    else t = DURATION;          // poster: tampilkan frame akhir sebelum diputar
+    render(t);
+    if (!isRender) requestAnimationFrame(loop);
+  });
+
+  window.MANGOBITE = { DURATION, render, ready };
+})();
+</script>
+</body>
+</html>
