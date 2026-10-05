@@ -172,3 +172,24 @@ Musik: drone rendah + strings staccato 120 BPM (satu tik-tok per ketukan), detak
 python3 horor/music.py
 node scripts/render.mjs --page horor/index.html --audio out/horor-music.wav --out out/horor.mp4 --crf 18
 ```
+
+---
+
+# Video Lintas Era — “tugas kuliah: dulu vs sekarang.” (9:16, 40s)
+
+**Hasil:** [`dist/era-dulu-vs-sekarang-40s-9x16.mp4`](dist/era-dulu-vs-sekarang-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, musik orisinal + SFX tertanam. Proyek terpisah di `era/`: satu mahasiswa pindah era lewat transisi swipe miring; tiap era punya tekstur (hitam-putih + grain, VHS, pixel/CRT, filter pudar, bersih), warna, font (Special Elite, Monoton, Press Start 2P, Poppins) dan perangkat khasnya. Akhir kembali ke palet biru `#184AA1`, putih, navy, amber. Watermark `@taskkora__` (opacity 30%) sepanjang video.
+
+| Waktu (swipe) | Era | Musik | Masalah / SFX |
+|---|---|---|---|
+| 0–8s | hook close-up mesin ketik → **1958** mesin ketik | jazz lembut 120 BPM swing | ketukan keras, bel, kertas dicabut & dilempar; salah ketik → tip-ex |
+| 8–12.5s | **1988** komputer & disket | synth pop 80-an | disket masuk, drive berderit, beep error, “disk error! file tidak ditemukan” |
+| 12.5–17s | **1999** warnet | chiptune 160 BPM | dial-up, klik mouse, antrean no. 27 (bel tiap nomor maju) |
+| 17–22s | **2012** laptop & flashdisk | lo-fi beat 96 BPM + debu vinyl | flashdisk masuk, beep baterai lemah, 14% → 0%, mati |
+| 22–26s | **2021** google docs di kafe | electronic bersih (ringan) | notifikasi komentar bertumpuk sampai 47 |
+| 26–34s | **sekarang** | electronic penuh (drop) | chat mintask, `tugas_final.pdf` ✓, lima masalah lama dicentang biru satu per satu |
+| 34–40s | logo Taskkora + “ada task? taskkora-in aja.” | outro electronic | sparkle |
+
+```bash
+python3 era/music.py
+node scripts/render.mjs --page era/index.html --audio out/era-music.wav --out out/era.mp4 --crf 18
+```
