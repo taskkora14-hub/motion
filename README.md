@@ -152,3 +152,22 @@ Audio orisinal: bossa nova 120 BPM (1 bar = 2 detik) — gitar nilon (model pluc
 python3 simkos/music.py      # -> out/simkos-music.wav (butuh node untuk membaca timeline.js)
 node scripts/render.mjs --page simkos/index.html --audio out/simkos-music.wav --out out/simkos.mp4 --crf 18
 ```
+
+---
+
+# Video Split-Screen — “Green flag vs red flag semester akhir.” (9:16, 40s)
+
+**Hasil:** [`dist/green-red-flag-40s-9x16.mp4`](dist/green-red-flag-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, **dengan musik electro-pop + SFX di dalam video**. Proyek terpisah di `flags/`: layar terbelah (kiri hijau, kanan merah) dengan garis diagonal bergerak, dua bendera kain berkibar (digambar per-strip dengan shading gelombang), kartu teks yang menghantam bergantian, dan karakter mahasiswa berkacamata yang bereaksi (jempol, kaget, meringis, facepalm, mikir). Palet dasar biru `#184AA1`, putih, navy; hijau & merah hanya untuk bendera. Watermark `@taskkora__` (opacity 25%) di pojok kanan bawah; tanpa logo atau scene promosi.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame 0: bendera hijau sudah menancap (retakan layar + shockwave + hit di sampel 0), bendera merah menyusul 0.28s, teks besar **“Green flag vs red flag semester akhir.”** |
+| 4–34s | 6 pasang × 5 detik: kartu GREEN FLAG masuk (ding) → mahasiswa jempol; 2 detik kemudian kartu RED FLAG (buzz rendah) → mahasiswa kaget / meringis / facepalm; penghitung `n / 6` di garis tengah |
+| 34–40s | Dua bendera tercabut, terbang dan bertabrakan (34.5s), layar jadi biru, muncul bendera dua warna dan pertanyaan **“Kamu dapat berapa green flag?”** + 6 slot ✓/✕ yang terus berganti |
+
+Audio orisinal: electro-pop 120 BPM (Am–F–C–G), kick four-on-the-floor, clap 2 & 4, supersaw ber-sidechain, bass saw, hook pluck; build ter-filter di hook dan drop tepat di 4.0s. Caption ada di [`flags/captions.md`](flags/captions.md).
+
+```bash
+python3 flags/music.py       # -> out/flags-music.wav
+node scripts/render.mjs --page flags/index.html --audio out/flags-music.wav --out out/flags.mp4 --crf 18
+```
