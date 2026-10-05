@@ -171,3 +171,22 @@ Audio orisinal: electro-pop 120 BPM (Am–F–C–G), kick four-on-the-floor, cl
 python3 flags/music.py       # -> out/flags-music.wav
 node scripts/render.mjs --page flags/index.html --audio out/flags-music.wav --out out/flags.mp4 --crf 18
 ```
+
+---
+
+# Video Ink-in-Water — “Tunggu sampai kupu-kupunya terbang.” (9:16, 40s)
+
+**Hasil:** [`dist/ink-kupu-kupu-40s-9x16.mp4`](dist/ink-kupu-kupu-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, **dengan musik ambient sinematik + SFX air di dalam video**. Proyek terpisah di `ink/`: tinta adalah *fragment shader* WebGL — bentuk SDF (gumpalan jatuh → awan → bunga → burung → kupu-kupu) yang di-blend sepanjang waktu dan dilewatkan ke medan noise *domain-warped*, lalu diwarnai dengan absorpsi Beer–Lambert sehingga tinta biru `#184AA1` dan amber menggelapkan latar studio putih seperti pewarna sungguhan (kedua tinta dijaga tidak bercampur jadi hijau). Kamera makro berputar & zoom pelan; gelembung, cipratan, teks, dan watermark digambar di lapisan 2D. Watermark `@taskkora__` (opacity 25%); tanpa logo atau scene promosi.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame 0: tetes tinta biru menyentuh permukaan (plung + hit di sampel 0), mahkota cipratan & riak, tinta mengembang jadi jamur pusaran; teks besar **“Tunggu sampai kupu-kupunya terbang.”** |
+| 4–30s | Tetes amber menyusul (4.6s); tinta bergolak lalu tenang membentuk **awan** (7.4s) → **bunga mekar** berinti amber (12.4s) → **burung** mengepak (18.4s) → bentuk **sayap** yang makin detail (24.6–30s) |
+| 30–40s | **Kupu-kupu biru berpendar dengan sayap amber** mengepak, lepas dari air (cipratan ~34.4s), kamera ikut naik ke **langit senja** dengan matahari di cakrawala; tanpa teks |
+
+Audio orisinal: ambient sinematik D mayor (piano felt aditif, pad hangat, chime FM, low strings) yang makin megah di transformasi terakhir (boom lembut + kaskade chime), plus SFX tetesan, gelembung, whoosh air lembut, kepakan sayap, dan cipratan keluar air. Caption ada di [`ink/captions.md`](ink/captions.md).
+
+```bash
+python3 ink/music.py         # -> out/ink-music.wav
+node scripts/render.mjs --page ink/index.html --audio out/ink-music.wav --out out/ink.mp4 --crf 18
+```
