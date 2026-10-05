@@ -132,3 +132,23 @@ Gameplay (spawn, tembakan, ledakan, blok yang lolos) dihitung sekali secara dete
 python3 arcade/music.py
 node scripts/render.mjs --page arcade/index.html --audio out/arcade-music.wav --out out/arcade.mp4 --crf 18
 ```
+
+---
+
+# Video Snap Transition — “snap! semester kemarin vs sekarang.” (9:16, 40s)
+
+**Hasil:** [`dist/snap-semester-40s-9x16.mp4`](dist/snap-semester-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, musik electro-pop orisinal 125 BPM + SFX snap/whoosh tertanam. Proyek terpisah di `snap/` (ilustrasi flat, kamera terkunci, satu karakter di posisi tetap, font Poppins (OFL), palet biru `#184AA1`, putih, navy, amber). Watermark `@taskkora__` (opacity 30%) di pojok kanan bawah sepanjang video.
+
+| Waktu | Snap (tepat di ketukan) | Scene |
+|---|---|---|
+| 0–4.32s | 0.00 (hit + snap) | Hook: mahasiswa kusut berhoodie, kantung mata, sticky note panik → “snap! semester kemarin vs sekarang.” |
+| 4.32–26.88s | 4.32 · 8.64 · 12.96 · 17.28 · 21.60 | semester 1 kamar berantakan → semester 3 presentasi → semester 5 perpustakaan → semester 7 seminar (jas almamater) → lulus (toga, konfeti) |
+| 26.88–34.56s | 26.88 (drop) | Kartu biru “mintask” muncul di tangan, “snap terbaik: serahkan yang bukan keahlianmu.”, chip tugas terbang masuk ke kartu |
+| 34.56–40s | 34.56 | Layar biru, logo Taskkora, “ada task? taskkora-in aja.” |
+
+Setiap snap = wipe lingkaran dari tangan yang menjentik (0.16 s) + kilat + garis burst; karakter mengangguk tiap ketukan. Musik: F#m–D–A–E, bass tebal ber-sidechain, build dengan snare roll + riser, drop di 26.88 s.
+
+```bash
+python3 snap/music.py
+node scripts/render.mjs --page snap/index.html --audio out/snap-music.wav --out out/snap.mp4 --crf 18
+```
