@@ -134,3 +134,23 @@ Semua kejadian game (tembakan, ledakan, blok jatuh, ledakan laser) dihitung dete
 python3 arcade/music.py
 node scripts/render.mjs --page arcade/index.html --audio out/arcade-music.wav --out out/arcade.mp4 --crf 18
 ```
+
+---
+
+# Video Meditasi — “Tugas numpuk? Tarik napas 20 detik.” (9:16, 40s)
+
+**Hasil:** [`dist/napas-kotak-40s-9x16.mp4`](dist/napas-kotak-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, dengan musik & SFX. Proyek terpisah di `napas/` (latar gradien navy → biru, partikel cahaya lembut, font Sora). Palet: biru `#184AA1`, putih, navy, aksen amber.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame pertama langsung aksi: garis cahaya amber mulai menggambar sisi pertama kotak, hit lembut + chime di detik 0, teks “tugas numpuk? tarik napas 20 detik.” di tengah atas |
+| 4–28s | Box breathing terpandu, satu sisi per fase: tarik → tahan → buang → tahan (6 detik per sisi, hitungan 1–4 tiap 1,5 detik). Kotak mengembang/menyusut & berpendar, latar makin tenang. Teks “satu hal dulu.” lalu “bukan semuanya sekaligus.” |
+| 28–35s | Kotak selesai dan bersinar, gelembung chat mintask muncul di tengah: “yang berat, kami bantu ambil.” |
+| 35–40s | Kotak berputar & menyusut jadi logo Taskkora yang bersinar, layar berubah biru, tagline “ada task? taskkora-in aja.” |
+
+Watermark “@taskkora__” di pojok kanan bawah (opacity 25%) sepanjang video. Musik ambient orisinal ±60 BPM tanpa beat: piano lembut, pad hangat yang filternya membuka saat tarik napas dan menutup saat buang napas, chime kecil di tiap sisi kotak.
+
+```bash
+python3 napas/music.py
+node scripts/render.mjs --page napas/index.html --audio out/napas-music.wav --out out/napas.mp4 --crf 18
+```
