@@ -132,3 +132,23 @@ Audio orisinal: chiptune A minor 140 BPM (2 kanal pulse, bass triangle 4-bit, dr
 python3 arcade/music.py      # -> out/arcade-music.wav (butuh node untuk membaca jadwal game dari sim.js)
 node scripts/render.mjs --page arcade/index.html --audio out/arcade-music.wav --out out/arcade.mp4 --crf 18
 ```
+
+---
+
+# Video Life-Sim 3D — “Bar tugasmu merah. Lanjut?” (9:16, 40s)
+
+**Hasil:** [`dist/bar-tugas-lifesim-40s-9x16.mp4`](dist/bar-tugas-lifesim-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, **dengan musik bossa nova + SFX + suara gibberish di dalam video**. Proyek terpisah di `simkos/`: potongan penampang kamar kos 3D (three.js / WebGL, bayangan lembut, tone-mapping ACES) dikomposit ke kanvas 2D dengan HUD gaya game simulasi kehidupan — panel kebutuhan (Energi, Fokus, Mood, Tugas), gelembung pikiran, ikon mengambang, pie menu. Karakter mahasiswa chibi dengan rig prosedural; di atas kepalanya berlian potongan *brilliant* (meja datar + mahkota + paviliun runcing — desain orisinal) yang warnanya mengikuti rata-rata kebutuhan (merah → amber → hijau). Palet: biru `#184AA1`, putih, navy, aksen amber. Watermark `@taskkora__` (opacity 30%) di pojok kanan bawah sepanjang video.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame 0 langsung aksi (hit + alarm di sampel 0): bar **Tugas** merah berkedip “KRITIS!”, mahasiswa panik (lompat, tangan melambai, keringat), teks besar **“Bar tugasmu merah. Lanjut?”** |
+| 4–26s | Coba naikkan bar dengan cara lucu: **tidur** (time-lapse malam, jam berputar, Zzz — Energi naik, Tugas turun), **makan mie** (slurp, uap — Mood naik), **scroll medsos** (ikon like/notif — Fokus turun). Tiap langkah bar beranimasi + chip “+/−” mengambang, *ting* saat naik, *buzz* saat turun |
+| 26–34s | Pie menu pilihan baru muncul, kursor memilih kartu biru **MinTask** → kartu terbang ke bar Tugas, bar langsung hijau penuh dengan ledakan bintang amber, semua bar menyala penuh, berlian jadi hijau |
+| 34–40s | Mahasiswa bersantai di sofa dengan berlian hijau → lingkaran biru melebar dari berlian, logo Taskkora + **“Ada task? Taskkora-in aja.”** |
+
+Audio orisinal: bossa nova 120 BPM (1 bar = 2 detik) — gitar nilon (model pluck aditif), piano elektrik FM, vibes, shaker, rim-click, kick lembut; versi lullaby saat tidur. Suara karakter adalah bahasa karangan (sintesis formant: getaran glotal → formant vokal + konsonan acak) dengan kontur nada per mood (panik, menguap, senang, nyam, bosan, menghela napas, girang). Semua ting / buzz / gumaman dibaca dari `simkos/timeline.js`. Caption media sosial ada di [`simkos/captions.md`](simkos/captions.md).
+
+```bash
+python3 simkos/music.py      # -> out/simkos-music.wav (butuh node untuk membaca timeline.js)
+node scripts/render.mjs --page simkos/index.html --audio out/simkos-music.wav --out out/simkos.mp4 --crf 18
+```
