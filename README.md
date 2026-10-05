@@ -112,3 +112,23 @@ node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --ou
 python3 presentasi/music.py
 node scripts/render.mjs --page presentasi/index.html --audio out/presentasi-music.wav --out out/presentasi.mp4 --crf 18
 ```
+
+---
+
+# Video Arcade — “level 1: tugas menyerang!” (9:16, 40s)
+
+**Hasil:** [`dist/arcade-tugas-menyerang-40s-9x16.mp4`](dist/arcade-tugas-menyerang-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik. Musik chiptune orisinal + SFX arcade sudah tertanam. Proyek terpisah di `arcade/` (gaya 8-bit pixel art, layar CRT dengan scanline, font Press Start 2P (OFL), palet biru `#184AA1`, putih, navy, aksen amber). Watermark `@taskkora__` (opacity 30%) di pojok kanan bawah sepanjang video.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Hook: CRT menyala (hit + coin tepat di 0.000s), “level 1: tugas menyerang!”, blok tugas turun cepat |
+| 4–26s | Mahasiswa pixel menembak blok “makalah”, “laporan”, “presentasi”, “kuis”; blok makin banyak & cepat, yang lolos menumpuk di garis deadline, bar nyawa menipis (20 → 3), skor naik, banner “awas deadline!” |
+| 26–34s | Kartu biru “mintask” jatuh → ditangkap (power-up) → laser biru membersihkan seluruh layar, “bantuan datang.” + bonus |
+| 34–40s | “stage clear!” + skor/hi-score → layar biru, logo Taskkora (mosaic reveal), “ada task? taskkora-in aja.” |
+
+Gameplay (spawn, tembakan, ledakan, blok yang lolos) dihitung sekali secara deterministik di `arcade/plan.js`; dipakai oleh animasi **dan** musik, jadi tiap “pew”/ledakan sinkron dengan frame. Musik 140 BPM, makin cepat sampai 172 BPM saat tugas menumpuk, break untuk power-up, groove C mayor saat laser, lalu fanfare kemenangan.
+
+```bash
+python3 arcade/music.py
+node scripts/render.mjs --page arcade/index.html --audio out/arcade-music.wav --out out/arcade.mp4 --crf 18
+```
