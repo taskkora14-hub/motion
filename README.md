@@ -112,3 +112,23 @@ node scripts/render.mjs --page mulai/index.html --audio out/mulai-music.wav --ou
 python3 presentasi/music.py
 node scripts/render.mjs --page presentasi/index.html --audio out/presentasi-music.wav --out out/presentasi.mp4 --crf 18
 ```
+
+---
+
+# Video Arcade — “Level 1: Tugas Menyerang!” (9:16, 40s)
+
+**Hasil:** [`dist/tugas-menyerang-arcade-40s-9x16.mp4`](dist/tugas-menyerang-arcade-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, **dengan musik chiptune + SFX di dalam video**. Proyek terpisah di `arcade/`: game 8-bit di grid 270×480 piksel (1 piksel art = 4 px), font piksel 5×7 buatan sendiri, efek CRT (scanline, glow, vignette, layar melengkung). Palet: biru `#184AA1`, putih, navy, aksen amber. Watermark `@taskkora__` (opacity 30%) di pojok kanan bawah sepanjang video.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame 0 langsung aksi: CRT menyala (impact + coin di sampel 0), teks besar **“LEVEL 1: TUGAS MENYERANG!”** di tengah atas, blok tugas turun cepat |
+| 4–26s | Mahasiswa piksel menembak blok MAKALAH / LAPORAN / PRESENTASI / KUIS dengan pensil-blaster; blok makin banyak & cepat, bar nyawa menipis (100% → 18%), skor naik, banner “!! DEADLINE !!” |
+| 26–34s | Kartu power-up biru **MINTASK** jatuh, ditangkap (29.4s) → laser biru menyapu & membersihkan seluruh layar (29.75s) → **“BANTUAN DATANG.”** |
+| 34–40s | **STAGE CLEAR!** + hitung skor & NEW HI-SCORE → dissolve piksel ke biru, logo Taskkora (resolve dari piksel kasar), **“ADA TASK? TASKKORA-IN AJA.”** |
+
+Audio orisinal: chiptune A minor 140 BPM (2 kanal pulse, bass triangle 4-bit, drum noise) yang **mempercepat sampai 172 BPM** saat tugas menumpuk, sirene saat HP rendah, tema hero C mayor setelah power-up, lalu fanfare kemenangan. Semua pew / ledakan / damage dibaca dari `arcade/sim.js`, jadi jatuh tepat di frame yang sama dengan visualnya. Caption media sosial ada di [`arcade/captions.md`](arcade/captions.md).
+
+```bash
+python3 arcade/music.py      # -> out/arcade-music.wav (butuh node untuk membaca jadwal game dari sim.js)
+node scripts/render.mjs --page arcade/index.html --audio out/arcade-music.wav --out out/arcade.mp4 --crf 18
+```
