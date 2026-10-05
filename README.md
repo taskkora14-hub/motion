@@ -154,3 +154,23 @@ Watermark “@taskkora__” di pojok kanan bawah (opacity 25%) sepanjang video. 
 python3 napas/music.py
 node scripts/render.mjs --page napas/index.html --audio out/napas-music.wav --out out/napas.mp4 --crf 18
 ```
+
+---
+
+# Video Claymation — “Tugas numpuk? Ya dibentuk.” (9:16, 40s)
+
+**Hasil:** [`dist/tugas-dibentuk-clay-40s-9x16.mp4`](dist/tugas-dibentuk-clay-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, dengan musik & SFX. Proyek terpisah di `clay/`: semua karakter & properti adalah “gumpalan tanah liat” (superellipse bergelombang + gradien volume + tekstur sidik jari + bayangan kontak), gerak dikuantisasi ke 12 pose/detik dan tiap pose sedikit “boil” seperti stop-motion asli. Font Fredoka (OFL). Palet: biru `#184AA1`, putih, navy, aksen amber.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame pertama langsung aksi: tangan seniman menampar bongkahan tanah liat biru (squish + hit di detik 0), mencubitnya ke atas, lalu menusuk → jadi mahasiswa yang melambai. Teks “tugas numpuk? ya dibentuk.” di tengah atas |
+| 4–26s | Kamar kos miniatur: kertas tanah liat berjatuhan dan menumpuk menjulang, kopi tersenggol & tumpah, jam dinding berputar makin cepat, wajah mahasiswa melorot bertahap (6 tahap, tiap tahap “squish”) |
+| 26–34s | Mintask berapron biru melompat masuk, merapikan tumpukan jadi 4 map rapi, mengelap kopi; wajah mahasiswa kembali bentuk dan tersenyum |
+| 34–40s | Tangan seniman menekan cap ke lempeng tanah liat → logo Taskkora tercetak; lembaran tanah liat biru menutup layar, logo + “ada task? taskkora-in aja.” |
+
+Watermark “@taskkora__” di pojok kanan bawah (opacity 30%) sepanjang video. Musik orisinal 110 BPM: ukulele, glockenspiel, tepuk tangan, bass petik; foley plop/tek/squish/thunk ditempatkan dari `clay/timeline.js` (lembar kertas mendarat, tik jam, wajah melorot, dll.).
+
+```bash
+python3 clay/music.py
+node scripts/render.mjs --page clay/index.html --audio out/clay-music.wav --out out/clay.mp4 --crf 18
+```

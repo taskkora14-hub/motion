@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tugas Dibentuk</title>
+<style>
+  @font-face { font-family: "Fredoka"; font-weight: 600; src: url(fonts/Fredoka-600.ttf); }
+  @font-face { font-family: "Fredoka"; font-weight: 700; src: url(fonts/Fredoka-700.ttf); }
+  html, body { margin: 0; background: #04071a; height: 100%; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; font-family: monospace; color: #fff; }
+  canvas { height: 86vh; aspect-ratio: 9 / 16; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+  .bar { display: flex; gap: 10px; align-items: center; font-size: 14px; }
+  button { font: inherit; padding: 6px 14px; border-radius: 999px; border: 0; background: #FFB627; color: #0B1640; cursor: pointer; }
+  input[type=range] { width: 320px; }
+  body.render { display: block; background: #000; }
+  body.render canvas { height: auto; width: 1080px; border-radius: 0; box-shadow: none; }
+  body.render .bar { display: none; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<div class="bar">
+  <button id="play">Pause</button>
+  <input id="seek" type="range" min="0" max="40" step="0.01" value="0">
+  <span id="time">0.00s</span>
+</div>
+<script src="timeline.js"></script>
+<script src="anim.js"></script>
+</body>
+</html>
