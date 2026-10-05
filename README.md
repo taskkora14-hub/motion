@@ -174,3 +174,22 @@ Watermark “@taskkora__” di pojok kanan bawah (opacity 30%) sepanjang video. 
 python3 clay/music.py
 node scripts/render.mjs --page clay/index.html --audio out/clay-music.wav --out out/clay.mp4 --crf 18
 ```
+
+---
+
+# Video Kartun — “Level kantuk kelas jam 7 pagi.” (9:16, 40s)
+
+**Hasil:** [`dist/level-kantuk-40s-9x16.mp4`](dist/level-kantuk-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, dengan musik & SFX. Proyek terpisah di `kantuk/` (kartun 2D flat dengan outline navy, font Fredoka). Palet: biru `#184AA1`, putih, navy, aksen amber. Tanpa logo/scene promosi; watermark “@taskkora__” kecil di pojok kanan bawah (opacity 25%).
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame pertama: kepala mahasiswa membentur meja (“duk!” di detik 0), lalu tersentak bangun kaget. Teks “level kantuk kelas jam 7 pagi.” di tengah atas |
+| 4–34s | Lima level × 6 detik, meteran “level kantuk” di kiri naik tiap level (+ “ting”): 1 masih segar mencatat → 2 mata mulai berat (kedip berat, menguap) → 3 mengangguk-angguk (kepala terkulai lalu tersentak) → 4 tidur mata terbuka (ngiler) → 5 tidur tegak, gelembung ingus, pensil berdiri menancap di kertas. Jam di papan 07.00 → 08.04, tulisan papan makin buram, “wah-wah” dosen makin kecil & samar |
+| 34–40s | Dosen: “ada pertanyaan?” → mahasiswa tersentak bangun, lalu grid lima mahasiswa level 1–5 terbangun serempak, teks “level berapa kamu hari ini?” |
+
+Musik orisinal lo-fi playful (e-piano, bass, drum lembut, kalimba, crackle vinyl) yang makin lambat & teredam tiap level (90 → 84 → 78 → 72 → 64 BPM), tape-stop saat “ada pertanyaan?”, lalu kembali 90 BPM saat bangun. SFX dari `kantuk/timeline.js`: “duk”, wah-wah dosen yang makin jauh, kepala terkulai, dengkur, “ting” naik level.
+
+```bash
+python3 kantuk/music.py
+node scripts/render.mjs --page kantuk/index.html --audio out/kantuk-music.wav --out out/kantuk.mp4 --crf 20
+```
