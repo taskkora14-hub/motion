@@ -193,3 +193,22 @@ Musik orisinal lo-fi playful (e-piano, bass, drum lembut, kalimba, crackle vinyl
 python3 kantuk/music.py
 node scripts/render.mjs --page kantuk/index.html --audio out/kantuk-music.wav --out out/kantuk.mp4 --crf 20
 ```
+
+---
+
+# Video This-or-That — “Pilih cepat! This or that mahasiswa.” (9:16, 40s)
+
+**Hasil:** [`dist/this-or-that-mahasiswa-40s-9x16.mp4`](dist/this-or-that-mahasiswa-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, dengan musik & SFX. Proyek terpisah di `pilih/` (layar terbelah atas/bawah, 16 ilustrasi flat, timer lingkaran 3 detik di garis tengah, font Fredoka). Palet: biru `#184AA1`, putih, navy, aksen amber. Tanpa logo/scene promosi; watermark “@taskkora__” kecil di pojok kanan bawah (opacity 25%).
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Timer 3-2-1 sudah berjalan dari frame pertama (hit + tik di detik 0), teks “pilih cepat! this or that mahasiswa.” → “mulai!” |
+| 4–36s | 8 pasang × 4 detik: kartu masuk, timer 3 detik (tik-tik), lalu pilihan terkunci — sisi terpilih zoom + bingkai amber, sisi lain meredup, stempel “terkunci” + pop. Urutan: kuliah pagi/malam, kerja kelompok/sendirian, kopi/teh, ujian tulis/lisan, presentasi/laporan, kelas online/offline, begadang/bangun subuh, kos dekat kampus/rumah jauh tapi nyaman |
+| 36–40s | Kartu hasil “kamu tim kalong kampus” berisi 8 jawaban (nomor 4 disorot) + “komen jawaban nomor 4 kamu.” |
+
+Musik orisinal pop-funk 118 BPM (slap bass, gitar funky, brass stab, clap, riff synth); SFX tik-tik timer, pop + klik gembok saat terkunci, whoosh pergantian — semua dari `pilih/timeline.js`.
+
+```bash
+python3 pilih/music.py
+node scripts/render.mjs --page pilih/index.html --audio out/pilih-music.wav --out out/pilih.mp4 --crf 20
+```
