@@ -152,3 +152,23 @@ Setiap snap = wipe lingkaran dari tangan yang menjentik (0.16 s) + kilat + garis
 python3 snap/music.py
 node scripts/render.mjs --page snap/index.html --audio out/snap-music.wav --out out/snap.mp4 --crf 18
 ```
+
+---
+
+# Video Horor-Komedi — “jam 23.00. satu notifikasi.” (9:16, 40s)
+
+**Hasil:** [`dist/horor-notifikasi-40s-9x16.mp4`](dist/horor-notifikasi-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, musik orisinal + SFX tertanam. Proyek terpisah di `horor/` (ilustrasi flat, kamar gelap dengan layer cahaya, sudut kamera miring, font Poppins (OFL), palet biru `#184AA1`, navy gelap, putih, amber). Watermark `@taskkora__` (opacity 30%) di pojok kanan bawah sepanjang video. Tanpa gore — monsternya bayangan tumpukan kertas bermata bulat.
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Hook: ponsel bergetar keras di meja (hit + sting horor di 0.000 s, “ting” bergema), notifikasi “dosen: revisi bab 3, besok pagi”, teks “jam 23.00. satu notifikasi.” |
+| 4–24s | Kamar gelap, sudut miring: mahasiswa membeku pucat kebiruan, bayangan monster tumpukan revisi merayap & membesar di dinding, close-up dokumen kosong dengan kursor berkedip, close-up wajah (“dug. dug. dug.”), jam berdetak, cahaya muncul di bawah pintu |
+| 24–34s | Pintu berderit terbuka → sting jumpscare lucu → MinTask berjaket biru membawa map & lampu, kamera tegak lagi, monster menyusut jadi tumpukan kertas rapi, map diserahkan |
+| 34–40s | Lampu menyala, kamar hangat, mahasiswa tertawa lega (“revisi bab 3? aman.”) → layar biru, logo Taskkora, “ada task? taskkora-in aja.” |
+
+Musik: drone rendah + strings staccato 120 BPM (satu tik-tok per ketukan), detak jantung 66 → 132 BPM, pintu berderit, lalu pizzicato + tuba oom-pah (F mayor), slide whistle saat monster menyusut, dan outro hangat (pad + glockenspiel).
+
+```bash
+python3 horor/music.py
+node scripts/render.mjs --page horor/index.html --audio out/horor-music.wav --out out/horor.mp4 --crf 18
+```
