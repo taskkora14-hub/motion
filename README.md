@@ -212,3 +212,23 @@ Musik orisinal pop-funk 118 BPM (slap bass, gitar funky, brass stab, clap, riff 
 python3 pilih/music.py
 node scripts/render.mjs --page pilih/index.html --audio out/pilih-music.wav --out out/pilih.mp4 --crf 20
 ```
+
+---
+
+# Video Tutorial — “5 shortcut yang jarang kamu tahu.” (9:16, 40s)
+
+**Hasil:** [`dist/5-shortcut-windows-40s-9x16.mp4`](dist/5-shortcut-windows-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, dengan musik & SFX. Proyek terpisah di `shortcut/` (keyboard besar di tengah, tombol yang ditekan menyala amber, jendela layar di atasnya, maskot mintask berjaket biru sebagai pemandu kecil di pojok kiri bawah — tanpa promosi). Font Plus Jakarta Sans. Palet: biru `#184AA1`, putih, navy, aksen amber. Watermark “@taskkora__” kecil di pojok kanan bawah (opacity 25%).
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Tangan menghantam win + shift + s (hit + klik di detik 0), layar langsung masuk mode potong layar. Teks “5 shortcut yang jarang kamu tahu.” |
+| 4–34s | 5 trik × 6 detik (windows): ctrl + shift + t (tab yang ketutup kembali), win + v (riwayat clipboard), win + shift + s (screenshot sebagian), ctrl + shift + v (paste tanpa format, berlaku di browser & banyak aplikasi), alt + tab (pindah jendela). Tiap trik ditutup label “simpan ini.” + ting |
+| 34–36s | Rangkuman cepat kelima shortcut |
+| 36–40s | Mintask mengacungkan dua jempol, teks “simpan video ini biar nggak lupa.” |
+
+Musik orisinal tech-pop 115 BPM yang ringan (pluck arpeggio, pad, sub bass, kick & clap lembut); klik keyboard mekanik di setiap tekan/lepas tombol, ting tiap trik selesai, whoosh/pop UI dan suara shutter — semua dari `shortcut/timeline.js`.
+
+```bash
+python3 shortcut/music.py
+node scripts/render.mjs --page shortcut/index.html --audio out/shortcut-music.wav --out out/shortcut.mp4 --crf 20
+```
