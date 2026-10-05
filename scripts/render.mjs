@@ -3,6 +3,7 @@
 //   node scripts/render.mjs --fps 30 --out x.mp4
 //   node scripts/render.mjs --stills 1,6.5,14   -> out/stills/*.png
 //   node scripts/render.mjs --page menunda/index.html --audio out/menunda-music.wav --out out/menunda.mp4
+//   node scripts/render.mjs --page cake/index.html --gl ...   (enables WebGL via SwiftShader for three.js pages)
 // Needs: playwright (Chromium) and an ffmpeg with libx264 (env FFMPEG or imageio-ffmpeg).
 import http from 'node:http';
 import fs from 'node:fs';
@@ -28,7 +29,7 @@ function ffmpegPath() {
   try { return execSync('python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())"').toString().trim(); } catch { return 'ffmpeg'; }
 }
 
-const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.ttf': 'font/ttf' };
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.ttf': 'font/ttf' };
 const CRF = String(args.crf || 16);
 const server = http.createServer((req, res) => {
   const p = path.join(ROOT, decodeURIComponent(new URL(req.url, 'http://x').pathname));
@@ -38,7 +39,7 @@ const server = http.createServer((req, res) => {
 }).listen(0);
 const port = server.address().port;
 
-const browser = await chromium.launch();
+const browser = await chromium.launch(args.gl ? { args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] } : {});   // --gl: WebGL pages (software GL)
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', e => console.error('page error:', e));
 await page.goto(`http://127.0.0.1:${port}/${PAGE}?render`);

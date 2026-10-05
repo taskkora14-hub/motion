@@ -216,3 +216,26 @@ Suasana makin redup menuju tanggal 29, lalu hangat lagi di tanggal 30. Musik: tr
 python3 tanggaltua/music.py
 node scripts/render.mjs --page tanggaltua/index.html --audio out/tanggaltua-music.wav --out out/tanggaltua.mp4 --crf 18
 ```
+
+---
+
+# Video “Is It Cake?” — “ini laptop asli atau kue?” (9:16, 40s)
+
+**Hasil:** [`dist/kue-atau-bukan-40s-9x16.mp4`](dist/kue-atau-bukan-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, musik ASMR orisinal + SFX tertanam. Proyek terpisah di `cake/`: adegan 3D **three.js** (MIT, di `cake/vendor/`) dengan meja marmer prosedural, cahaya studio (key + rim biru + fill hangat, bayangan lembut, refleksi lingkungan), pisau baja, dan lima benda yang dibelah oleh bidang potong (clipping plane) — permukaan potongnya tekstur kue prosedural (sponge vanilla/cokelat, krim putih, buttercream biru, karamel, kulit fondant sewarna benda). Palet biru `#184AA1`, putih, navy, amber. Watermark `@taskkora__` (opacity 25%); tanpa logo atau scene promosi.
+
+| Waktu | Benda | Momen |
+|---|---|---|
+| 0–4s | laptop biru | pisau sudah menancap di frame 0 (hit + “nyes” di 0.000 s), menggergaji pelan; “ini laptop asli atau kue?” |
+| 4–10s | laptop | dua belahan dipisah → lapisan sponge & krim, remah jatuh, kamera makro ke penampang; “kue!” |
+| 10–16s | tumpukan 3 buku | “kue atau bukan?” → dipotong → tiap buku kue berbeda (vanilla / cokelat) |
+| 16–22s | ransel | badan + kantong depan, dalamnya kue cokelat |
+| 22–28s | tumbler | badan & tutup, lapisan tinggi |
+| 28–34s | pensil raksasa | penampang heksagon dengan “isi grafit” cokelat |
+| 34–40s | semua benda berjejer | ditutup kain satu per satu; “yang mana paling bikin kamu kaget?” |
+
+Musik: piano felt, kalimba, pad hangat, beat samar 80 BPM (tiap benda = 2 bar). SFX ASMR: pisau menembus fondant, desis sayatan + remah, ketukan di marmer, krim lengket saat belahan dipisah, remah berjatuhan, kain jatuh.
+
+```bash
+python3 cake/music.py
+node scripts/render.mjs --gl --page cake/index.html --audio out/cake-music.wav --out out/cake.mp4 --crf 18   # --gl = WebGL lewat SwiftShader (±30 menit)
+```
