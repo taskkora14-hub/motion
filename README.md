@@ -232,3 +232,22 @@ Musik orisinal tech-pop 115 BPM yang ringan (pluck arpeggio, pad, sub bass, kick
 python3 shortcut/music.py
 node scripts/render.mjs --page shortcut/index.html --audio out/shortcut-music.wav --out out/shortcut.mp4 --crf 20
 ```
+
+---
+
+# Video Hopecore — “5 hal yang boleh kamu lepas hari ini.” (9:16, 40s)
+
+**Hasil:** [`dist/lentera-5-hal-40s-9x16.mp4`](dist/lentera-5-hal-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, dengan musik & SFX. Proyek terpisah di `lentera/`: ilustrasi sinematik sungai tenang di senja, lentera kertas yang menyala di tangan, ditulisi, lalu dilepas ke langit yang makin penuh bintang dan lentera. Font Caveat (tulisan tangan) + Lora (OFL). Palet: biru `#184AA1` lembut, navy, putih krem, aksen amber hangat. Tanpa logo/scene promosi; watermark “@taskkora__” kecil di pojok kanan bawah (opacity 20%).
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Frame pertama: lentera menyala mendadak di tangan (hit lembut + chime di detik 0), teks “5 hal yang boleh kamu lepas hari ini.” |
+| 4–34s | 5 lentera × 6 detik: tulisan tangan muncul di kertas lentera, lentera dilepas dan naik pelan ke titik langitnya, tulisan yang sama muncul besar di atas — “takut dinilai orang”, “membandingkan diri dengan orang lain”, “harus sempurna sejak awal”, “merasa tertinggal”, “rasa bersalah karena istirahat” |
+| 34–40s | Langit penuh lentera bercahaya, “kamu sudah berusaha. istirahatlah sebentar.” |
+
+Musik orisinal piano + string 70 BPM, emosional tapi menenangkan, makin hangat (string makin penuh & terang) menuju akhir dan selesai di akor mayor. Ambience: angin, riak air, desir kertas saat menulis/melepas lentera — dari `lentera/timeline.js`.
+
+```bash
+python3 lentera/music.py
+node scripts/render.mjs --page lentera/index.html --audio out/lentera-music.wav --out out/lentera.mp4 --crf 20
+```
