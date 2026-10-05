@@ -193,3 +193,26 @@ node scripts/render.mjs --page horor/index.html --audio out/horor-music.wav --ou
 python3 era/music.py
 node scripts/render.mjs --page era/index.html --audio out/era-music.wav --out out/era.mp4 --crf 18
 ```
+
+---
+
+# Video Flat Lay — “menu mahasiswa tanggal tua.” (9:16, 40s)
+
+**Hasil:** [`dist/menu-tanggal-tua-40s-9x16.mp4`](dist/menu-tanggal-tua-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, musik orisinal + SFX tertanam. Proyek terpisah di `tanggaltua/` (ilustrasi flat lay dari atas: taplak gingham biru-krem, kalender sobek, satu piring, sendok, garpu, gelas; font Poppins + Caveat (OFL); palet biru `#184AA1`, putih krem, navy, amber). Watermark `@taskkora__` (opacity 25%) sepanjang video; tanpa logo atau scene promosi.
+
+| Waktu | Tanggal | Piring | Teks |
+|---|---|---|---|
+| 0–4s | sobekan kalender → 25 (hit + “sret” di 0.000 s) | penuh: nasi, telur, sayur, tempe, sambal, kerupuk | “menu mahasiswa tanggal tua.” |
+| 4–9.6s | 25 | sama | “masih berasa sultan.” |
+| 9.6–15.2s | 26 | nasi + kecap (dituang) | “kecap = lauk utama.” |
+| 15.2–20.8s | 27 | mie instan dibagi dua + sticky note “buat besok” | “mie dibagi dua, sisanya buat besok.” |
+| 20.8–26.4s | 28 | nasi sedikit + garis putus-putus “bayangan lauk” | “lauknya pakai imajinasi.” |
+| 26.4–32s | 29 | mug air putih hangat + halo | “kenyang secara spiritual.” |
+| 32–40s | 30 | notifikasi transfer masuk → piring penuh + ayam, sinar & kilau | “tanggal 1, sampai ketemu lagi.” |
+
+Suasana makin redup menuju tanggal 29, lalu hangat lagi di tanggal 30. Musik: trio jazz santai (walking bass, brush, piano, klarinet) yang tiap hari makin pelan & sendu (86 → ±54 BPM, mayor → minor → solo piano), lalu swing 140 BPM yang ceria saat transfer masuk. SFX: sobekan kalender, sendok berdenting, pop makanan, kecap dituang, notifikasi + koin.
+
+```bash
+python3 tanggaltua/music.py
+node scripts/render.mjs --page tanggaltua/index.html --audio out/tanggaltua-music.wav --out out/tanggaltua.mp4 --crf 18
+```
