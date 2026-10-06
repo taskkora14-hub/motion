@@ -239,3 +239,25 @@ Musik: piano felt, kalimba, pad hangat, beat samar 80 BPM (tiap benda = 2 bar). 
 python3 cake/music.py
 node scripts/render.mjs --gl --page cake/index.html --audio out/cake-music.wav --out out/cake.mp4 --crf 18   # --gl = WebGL lewat SwiftShader (±30 menit)
 ```
+
+---
+
+# Video Infografis — “uang bulanan segini cukup nggak?” (9:16, 40s)
+
+**Hasil:** [`dist/uang-bulanan-40s-9x16.mp4`](dist/uang-bulanan-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, musik orisinal + SFX tertanam. Proyek terpisah di `anggaran/` (infografis flat: donut chart, ikon tiap kategori, angka berhitung, saldo di pojok, kalkulator di sudut; font Poppins; palet biru `#184AA1`, putih, navy, amber). Label **“contoh, bukan data resmi”** tampil sepanjang video; semua angka hanya ilustrasi. Watermark `@taskkora__` (opacity 25%); tanpa logo atau scene promosi.
+
+Warna 7 kategori dipilih dan divalidasi (lightness, chroma, beda warna untuk buta warna termasuk pasangan ujung donut yang bersambung) di atas kartu putih; identitas kategori tidak hanya lewat warna — tiap kategori punya ikon, nama dan angka di legenda; saldo merah selalu disertai ikon peringatan + teks “hampir habis”.
+
+| Waktu | Isi |
+|---|---|
+| 0–4.6s | hit + “cring” di 0.000 s, kartu “uang kiriman masuk”, angka contoh rp1.500.000 di tengah donut; “uang bulanan segini cukup nggak?” |
+| 4.6–29.7s | 7 pos (tiap 6 ketukan): kos 600.000 · makan 500.000 · transport 150.000 · kuota & pulsa 75.000 · fotokopi & atk 50.000 · tabungan 50.000 · hiburan 75.000 — irisan donut terisi, angka berhitung, cring, klik kalkulator; saldo menipis dan merah mulai rp175.000 |
+| 29.7–34.3s | kalkulator ke tengah: 1.500.000 − 1.500.000 = rp0; “ini cuma contoh. punyamu berapa?” |
+| 34.3–40s | tiga kolom kosong “kota”, “uang bulanan”, “kos” + format komentar |
+
+Musik: groove 105 BPM (synth bass sinkopasi, electric piano, clav, drum ringan), breakdown di scene 3. SFX: koin, klik & beep kalkulator, “wah-wah” turun saat saldo merah, habis, dan saat kalkulator menunjukkan rp0.
+
+```bash
+python3 anggaran/music.py
+node scripts/render.mjs --page anggaran/index.html --audio out/anggaran-music.wav --out out/anggaran.mp4 --crf 18
+```
