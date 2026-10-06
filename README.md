@@ -251,3 +251,22 @@ Musik orisinal piano + string 70 BPM, emosional tapi menenangkan, makin hangat (
 python3 lentera/music.py
 node scripts/render.mjs --page lentera/index.html --audio out/lentera-music.wav --out out/lentera.mp4 --crf 20
 ```
+
+---
+
+# Video Simulasi Chat — “Chat a atau b yang bakal dibalas dosen?” (9:16, 40s)
+
+**Hasil:** [`dist/chat-dosen-a-atau-b-40s-9x16.mp4`](dist/chat-dosen-a-atau-b-40s-9x16.mp4) — 1080×1920, 60 fps, H.264 + AAC, tepat 40 detik, dengan musik & SFX. Proyek terpisah di `chat/`: dua jendela chat bertumpuk (atas versi a, bawah versi b), bubble animasi dengan centang satu → centang dua (amber saat dibaca), emoji dosen sebagai pemandu (mengernyit untuk a, tersenyum untuk b). Semua nama fiktif/dikosongkan: kontak hanya “dosen pembimbing”, identitas mahasiswa ditulis “[nama]” dan “[nim]”. Font Plus Jakarta Sans. Palet: biru `#184AA1`, putih, navy, aksen amber. Tanpa logo/scene promosi; watermark “@taskkora__” kecil di pojok kanan bawah (opacity 25%).
+
+| Waktu | Scene |
+|---|---|
+| 0–4s | Dua pesan (“p” vs sapaan sopan) masuk bersamaan di frame pertama (hit + ting ganda di detik 0), teks “chat a atau b yang bakal dibalas dosen?” |
+| 4–34s | 3 ronde × 10 detik: minta bimbingan, minta maaf telat, tanya status. Tiap ronde: pesan a & b diketik lalu terkirim (swoosh), dibaca, dosen mengernyit di a (buzz, “dibaca, tidak dibalas”) dan tersenyum di b (lalu membalas + ting), penjelasan singkat di bawah, ditutup “komen a atau b dulu.” |
+| 34–40s | Kartu “3 prinsip chat dosen”: sebut nama dan nim · jelaskan tujuan · beri opsi waktu → “simpan buat nanti.” |
+
+Musik orisinal lo-fi 95 BPM dengan piano lembut (felt piano, beat swing, bass, crackle). SFX ting notifikasi, swoosh kirim, ketukan ketik, buzz kecil untuk pesan yang kurang efektif — semua dari `chat/timeline.js`.
+
+```bash
+python3 chat/music.py
+node scripts/render.mjs --page chat/index.html --audio out/chat-music.wav --out out/chat.mp4 --crf 20
+```
